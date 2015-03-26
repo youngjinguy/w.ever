@@ -6,6 +6,12 @@ public class Test {
 		System.out.println("Hello World");
 		
 		System.out.println("yaho~!~!~");
+		
+		System.out.println("umhaha");
+		System.out.println("umhaha");
+		System.out.println("umhaha");
+		System.out.println("umhaha");
+		System.out.println("umhaha");
 	}
 
 }
