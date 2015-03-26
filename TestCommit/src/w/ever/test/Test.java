@@ -8,6 +8,8 @@ public class Test {
 		System.out.println("hyun");
 
 		System.out.println("yaho~!~!~");
+		
+		System.out.println("hyun");
 
 	}
 
