@@ -13,7 +13,6 @@ public class Test {
 		
 		System.out.println("lee");
 
-		
 		System.out.println("umhaha");
 		System.out.println("umhaha");
 		System.out.println("umhaha");
