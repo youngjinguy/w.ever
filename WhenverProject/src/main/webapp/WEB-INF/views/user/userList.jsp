@@ -8,12 +8,20 @@
 <title>사용자 등록</title>
 </head>
 <body>
-	<table>
+	<table border="1">
+		<tr>
+			<td>아이디</td>
+			<td>이메일</td>
+			<td>핸드폰번호</td>
+			<td>생년월일</td>
+		</tr>	
 		<c:forEach var="user" items="${users}">
-			<tr><td>아이디</td><td>${user.id}</td></tr>	
-			<tr><td>이메일</td><td>${user.email}</td></tr>
-			<tr><td>핸드폰번호</td><td>${user.cellPhoneNo}</td></tr>
-			<tr><td>생년월일</td><td>${user.birthDate}</td></tr>
+			<tr>
+				<td><a href="${ctx}/user/${user.id}">${user.id}</a></td>
+				<td>${user.email}</td>
+				<td>${user.cellPhoneNo}</td>
+				<td>${user.birthDate}</td>
+			</tr>
 		</c:forEach>
 	</table>
 	<a href="${ctx}/user/regist">등록</a>

@@ -18,9 +18,20 @@ public class UserRepository{
 		this.userMapper.insertUser(user);
 	}
 
+	public void modifyUser(User user) {
+		this.userMapper.updateUser(user);
+	}
+	
+	public void removeUser(String id) {
+		this.userMapper.deleteUser(id);
+	}
+	
+	public User findUser(String id) {
+		return this.userMapper.selectUser(id);
+	}
+
 	public List<User> findUserList() {
 		return this.userMapper.selectUserList();
 	}
-
 	
 }

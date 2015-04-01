@@ -21,8 +21,23 @@ public class UserServiceImpl implements UserService{
 	}
 	
 	@Override
+	public void modifyUser(User user) {
+		this.userRepository.modifyUser(user);
+		
+	}
+	
+	@Override
+	public void removeUser(String id) {
+		this.userRepository.removeUser(id);
+	}
+	
+	@Override
+	public User findUser(String id) {
+		return this.userRepository.findUser(id);
+	}
+
+	@Override
 	public List<User> findUserList() {
 		return this.userRepository.findUserList();
 	}
-	
 }

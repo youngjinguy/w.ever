@@ -7,6 +7,12 @@ import kr.whenever.domain.User;
 public interface UserService {
 	
 	void registUser(User user);
+	
+	void modifyUser(User user);
+	
+	void removeUser(String id);
+	
+	User findUser(String id);
 
 	List<User> findUserList();
 
