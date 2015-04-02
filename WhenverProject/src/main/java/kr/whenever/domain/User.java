@@ -9,6 +9,14 @@ public class User {
 	private String cellPhoneNo;
 	
 	private String birthDate;
+	
+	public User() {}
+	
+	public User(String id, String email, String cellPhoneNo) {
+		this.id = id;
+		this.email = email;
+		this.cellPhoneNo = cellPhoneNo;
+	}
 
 	public String getId() {
 		return id;
