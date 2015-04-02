@@ -22,7 +22,7 @@
 	</beans:bean>
 	
 	<!-- @Controller 애노테이션을 붙혀진 클래스를 빈으로 등록 -->
-	<context:component-scan base-package="kr.whenever.apiweb.controller">
+	<context:component-scan base-package="kr.whenever.controller">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 	

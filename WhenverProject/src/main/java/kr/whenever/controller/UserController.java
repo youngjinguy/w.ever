@@ -1,4 +1,4 @@
-package kr.whenever.apiweb.controller;
+package kr.whenever.controller;
 
 import java.util.List;
 
