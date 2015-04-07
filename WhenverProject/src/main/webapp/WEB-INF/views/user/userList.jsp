@@ -5,10 +5,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="${ctx}/resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="${ctx}/resources/css/bootstrap-theme.min.css">
+<script src="${ctx}/resources/js/jquery-1.11.2.min.js"></script>
+<script src="${ctx}/resources/js/bootstrap.min.js"></script>
 <title>사용자 등록</title>
 </head>
 <body>
-	<table border="1">
+	<div class="container">
+	<table class="table table-bordered">
 		<tr>
 			<td>아이디</td>
 			<td>이메일</td>
@@ -24,6 +29,7 @@
 			</tr>
 		</c:forEach>
 	</table>
-	<a href="${ctx}/user/regist">등록</a>
+	<a class="btn btn-default" role="button" href="${ctx}/user/regist">등록</a>
+	</div>
 </body>
 </html>

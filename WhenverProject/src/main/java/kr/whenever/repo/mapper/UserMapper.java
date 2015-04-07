@@ -12,9 +12,9 @@ public interface UserMapper {
 
 	void updateUser(User user);
 	
-	void deleteUser(@Param("id") String id);
+	void deleteUser(@Param("id") Long id);
 	
-	User selectUser(@Param("id") String id);
+	User selectUser(@Param("id") Long id);
 
 	List<User> selectUserList();
 }

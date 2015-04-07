@@ -5,29 +5,39 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="${ctx}/resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="${ctx}/resources/css/bootstrap-theme.min.css">
+<script src="${ctx}/resources/js/jquery-1.11.2.min.js"></script>
+<script src="${ctx}/resources/js/bootstrap.min.js"></script>
 <title>사용자 등록</title>
 </head>
 <body>
-	<form action="${ctx}/user/regist" method="post">
-		<table>
-			<tr>
-				<td>아이디</td>
-				<td><input type="text" name="id"/></td>
-			</tr>	
-			<tr>
-				<td>이메일</td>
-				<td><input type="text" name="email"/></td>
-				</tr>
-			<tr>
-				<td>핸드폰번호</td>
-				<td><input type="text" name="cellPhoneNo"/></td>
-			</tr>
-			<tr>
-				<td>생년월일</td>
-				<td><input type="text" name="birthDate"/></td>
-			</tr>
-		</table>
-		<input type="submit" value="등록"/>
+	<div class="container">
+	<form class="form-horizontal" action="${ctx}/user/regist" method="post">
+		<div class="form-group">
+	    	<label for="email" class="col-md-2 control-label">Email</label>
+	    	<div class="col-md-10">
+	    		<input type="text" class="form-control" placeholder="Email" id="email" name="email" />
+			</div>
+		</div>
+		<div class="form-group">
+	    	<label for="cellPhoneNo" class="col-md-2 control-label">전화번호</label>
+	    	<div class="col-md-10">
+	    		<input type="text" class="form-control" placeholder="전화번호" id="cellPhoneNo" name="cellPhoneNo" />
+			</div>
+		</div>
+		<div class="form-group">
+	    	<label for="birthDate" class="col-md-2 control-label">생년월일</label>
+	    	<div class="col-md-10">
+	    		<input type="text" class="form-control" placeholder="생년월일" id="birthDate" name="birthDate" />
+			</div>
+		</div>
+		<div class="form-group">
+    	<div class="col-sm-offset-2 col-sm-10">
+      		<button type="submit" class="btn btn-default">수정</button>
+    		</div>
+  		</div>
 	</form>
+	</div>
 </body>
 </html>

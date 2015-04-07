@@ -6,22 +6,20 @@
    
 <mapper namespace="kr.whenever.repo.mapper.UserMapper">
     <resultMap id="userResultMap" type="User" >
-        <id     property="id"        			column="id"/>
-        <result property="email"         		column="email"/>
-        <result property="cellPhoneNo"  	column="cell_phone_no"/>
-        <result property="birthDate"  		column="birth_date"/>
+        <id     	property="id"        			column="id"/>
+        <result 	property="email"         		column="email"/>
+        <result 	property="cellPhoneNo"  	column="cell_phone_no"/>
+        <result 	property="birthDate"  		column="birth_date"/>
     </resultMap>
 
     <insert id="insertUser" parameterType="User">
 		INSERT INTO user (
-			id
-        	,email
+        	email
         	,cell_phone_no
         	,birth_date
         	)
         VALUES (
-        #{id}
-        ,#{email}
+        #{email}
         ,#{cellPhoneNo}
         ,#{birthDate}
         )
@@ -36,13 +34,13 @@
  		WHERE id = #{id};
     </update>
     
-    <delete id="deleteUser" parameterType="String">
+    <delete id="deleteUser" parameterType="Long">
     	DELETE
 		FROM user
 		WHERE id = #{id}
     </delete>
     
-    <select id="selectUser" parameterType="String" resultMap="userResultMap">
+    <select id="selectUser" parameterType="Long" resultMap="userResultMap">
 		SELECT 
 			id
 			,email

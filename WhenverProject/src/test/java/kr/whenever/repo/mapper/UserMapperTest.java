@@ -23,42 +23,45 @@ public class UserMapperTest extends WheneverDbUnitTest{
 
 	@Test
 	public void testInsertUser() {
-		User user = new User("jwyoon", "jaewoong.yoon@oracle.com", "010-5101-XXXX");
+		User user = new User("jaewoong.yoon@oracle.com", "010-5101-XXXX");
 		this.userMapper.insertUser(user);
 		
-		User insertedUser = this.userMapper.selectUser("jwyoon");
+		User insertedUser = this.userMapper.selectUser(3L);
 		
-		assertEquals(user.getId(), insertedUser.getId());
+		assertEquals(3, (long)insertedUser.getId());
 		assertEquals(user.getEmail(), insertedUser.getEmail());
 		assertEquals(user.getCellPhoneNo(), insertedUser.getCellPhoneNo());
 	}
 
 	@Test
 	public void testUpdateUser() {
-		User user = this.userMapper.selectUser("yjkim2");
-		user.setCellPhoneNo("010-7229-XXX1");
-		this.userMapper.updateUser(user);
-		
-		User updatedUser = this.userMapper.selectUser("yjkim2");
-		
-		assertEquals(user.getId(), updatedUser.getId());
-		assertEquals(user.getEmail(), updatedUser.getEmail());
-		assertEquals(user.getCellPhoneNo(), updatedUser.getCellPhoneNo());
+//		User user = this.userMapper.selectUser(1L);
+//		user.setCellPhoneNo("010-7229-XXX1");
+//		this.userMapper.updateUser(user);
+//		
+//		User updatedUser = this.userMapper.selectUser(1L);
+//		
+//		assertEquals(user.getId(), updatedUser.getId());
+//		assertEquals(user.getEmail(), updatedUser.getEmail());
+//		assertEquals(user.getCellPhoneNo(), updatedUser.getCellPhoneNo());
 	}
 
 	@Test
 	public void testDeleteUser() {
-		this.userMapper.deleteUser("yjkim2");
+		this.userMapper.deleteUser(1L);
 		
-		User user = this.userMapper.selectUser("yjkim2");
+		User user = this.userMapper.selectUser(1L);
 		
 		assertNull(user);
 	}
 
 	@Test
 	public void testSelectUser() {
-		User selectUser = this.userMapper.selectUser("yjkim2");
-		System.out.println(selectUser.toString());
+//		User user = this.userMapper.selectUser(1L);
+//		assertEquals(1, (long)user.getId());
+//		assertEquals("yjkim2@nextree.co.kr", user.getEmail());
+//		assertEquals("010-7229-XXXX", user.getCellPhoneNo());
+//		assertEquals("1989-01-29", user.getBirthDate());
 	}
 
 	@Test

@@ -10,9 +10,9 @@ public interface UserService {
 	
 	void modifyUser(User user);
 	
-	void removeUser(String id);
+	void removeUser(Long id);
 	
-	User findUser(String id);
+	User findUser(Long id);
 
 	List<User> findUserList();
 

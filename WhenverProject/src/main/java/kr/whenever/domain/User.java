@@ -2,7 +2,7 @@ package kr.whenever.domain;
 
 public class User {
 	
-	private String id;
+	private Long id;
 	
 	private String email;
 	
@@ -12,17 +12,16 @@ public class User {
 	
 	public User() {}
 	
-	public User(String id, String email, String cellPhoneNo) {
-		this.id = id;
+	public User(String email, String cellPhoneNo) {
 		this.email = email;
 		this.cellPhoneNo = cellPhoneNo;
 	}
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
