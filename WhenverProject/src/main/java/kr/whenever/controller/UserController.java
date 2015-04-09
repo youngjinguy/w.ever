@@ -30,8 +30,11 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/regist", method = RequestMethod.GET)
-	public String registUserForm(){
-		return "/user/userRegist";
+	public ModelAndView registUserForm(){
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("/user/userRegist");
+//		return "/user/userRegist";
+		return mav;
 	}
 	
 	@RequestMapping(value = "/regist", method = RequestMethod.POST)
@@ -59,7 +62,8 @@ public class UserController {
 	@RequestMapping(value = "/{id}", method = RequestMethod.POST)
 	public ModelAndView modifyUser(
 			@PathVariable(value = "id") String id,
-			@ModelAttribute User user
+//			@ModelAttribute User user
+			User user
 			){
 		this.userMapper.updateUser(user);
 		ModelAndView mav = new ModelAndView();
