@@ -5,11 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="${ctx}/resources/css/bootstrap.min.css">
-<link rel="stylesheet" href="${ctx}/resources/css/bootstrap-theme.min.css">
-<script src="${ctx}/resources/js/jquery-1.11.2.min.js"></script>
-<script src="${ctx}/resources/js/bootstrap.min.js"></script>
-<title>사용자 등록</title>
+<title>사용자 목록</title>
+<meta name="submenu" content="user" />
 </head>
 <body>
 	<div class="container">
@@ -29,6 +26,7 @@
 			</tr>
 		</c:forEach>
 	</table>
+	
 	<a class="btn btn-default" role="button" href="${ctx}/user/regist">등록</a>
 	</div>
 </body>
