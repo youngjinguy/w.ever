@@ -7,7 +7,6 @@ import kr.whenever.repo.mapper.UserMapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -30,13 +29,15 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/regist", method = RequestMethod.GET)
-	public String registUserForm(){
-		return "/user/userRegist";
+	public ModelAndView registUserForm(){
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("/user/userRegist");
+		return mav;
 	}
 	
 	@RequestMapping(value = "/regist", method = RequestMethod.POST)
 	public ModelAndView registUser(
-			@ModelAttribute User user
+			User user
 			){
 		this.userMapper.insertUser(user);
 		ModelAndView mav = new ModelAndView();
@@ -59,7 +60,7 @@ public class UserController {
 	@RequestMapping(value = "/{id}", method = RequestMethod.POST)
 	public ModelAndView modifyUser(
 			@PathVariable(value = "id") String id,
-			@ModelAttribute User user
+			User user
 			){
 		this.userMapper.updateUser(user);
 		ModelAndView mav = new ModelAndView();
