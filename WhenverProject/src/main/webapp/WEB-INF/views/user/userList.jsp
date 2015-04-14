@@ -7,6 +7,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>사용자 목록</title>
 <meta name="submenu" content="user" />
+<script type="text/javascript">
+	function ajax(){
+		$.ajax({
+			url : '${ctx}/ws/user',
+			type : 'get',
+			dataType : 'json',
+			success : function(data){
+				alert(JSON.stringify(data));
+			}
+		});
+	}
+</script>
 </head>
 <body>
 	<div class="container">
@@ -29,6 +41,7 @@
 	</table>
 	
 	<a class="btn btn-default" role="button" href="${ctx}/user/regist">등록</a>
+	<a class="btn btn-default" role="button" href="javascript:ajax();">ajax json call</a>
 	</div>
 </body>
 </html>

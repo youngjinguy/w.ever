@@ -26,4 +26,7 @@
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 	
+	<!-- 원래는 converter를 해줘야 하지만 <mvc:annotaion-driven/> 태그를 사용 함으로써 생략 가능하다. Spring 3.1 이후부터 가능 -->
+<!-- 	<beans:bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" /> -->
+	
 </beans:beans>
