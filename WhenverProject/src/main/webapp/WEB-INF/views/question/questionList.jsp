@@ -6,11 +6,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>사용자 목록</title>
-<meta name="submenu" content="user" />
+<meta name="submenu" content="question" />
 <script type="text/javascript">
 	function ajax(){
 		$.ajax({
-			url : '${ctx}/ws/user',
+			url : '${ctx}/ws/question',
 			type : 'get',
 			dataType : 'json',
 			success : function(data){
@@ -23,24 +23,29 @@
 <body>
 	<div class="container">
 	<table class="table table-bordered">
-	
 		<tr>
 			<td>아이디</td>
-			<td>이메일</td>
-			<td>핸드폰번호</td>
-			<td>생년월일</td>
+			<td>구분</td>
+			<td>과목</td>
+			<td>정답</td>
+			<td>문제</td>
+			<td>날짜</td>
+			<td>Uri</td>
 		</tr>	
-		<c:forEach var="user" items="${users}">
+		<c:forEach var="question" items="${users}">
 			<tr>
-				<td><a href="${ctx}/user/${user.id}">${user.id}</a></td>
-				<td>${user.email}</td>
-				<td>${user.cellPhoneNo}</td>
-				<td>${user.birthDate}</td>
+				<td><a href="${ctx}/question/${question.id}">${question.id}</a></td>
+				<td>${question.studentType}</td>
+				<td>${question.questionType}</td>
+				<td>${question.rightAnswer}</td>
+				<td>${question.questionTitle}</td>
+				<td>${question.questionYearMonth}</td>
+				<td>${question.questionUri}</td>
 			</tr>
 		</c:forEach>
 	</table>
 	
-	<a class="btn btn-default" role="button" href="${ctx}/user/regist">등록</a>
+	<a class="btn btn-default" role="button" href="${ctx}/question/regist">등록</a>
 	<a class="btn btn-default" role="button" href="javascript:ajax();">ajax json call</a>
 	</div>
 </body>

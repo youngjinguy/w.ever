@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+   
+<mapper namespace="kr.whenever.repo.mapper.QuestionMapper">
+    <resultMap id="questionResultMap" type="Question" >
+        <id     	property="id"        			column="id"/>
+        <result 	property="studentType"         	column="student_type"/>
+        <result 	property="questionType"  		column="question_type"/>
+        <result 	property="rightAnswer"  		column="right_answer"/>
+        <result 	property="questionTitle"  		column="question_title"/>
+        <result 	property="questionYearMonth"  	column="question_year_month"/>
+        <result 	property="questionUri"  		column="question_uri"/>        
+    </resultMap>
+
+	
+    <insert id="insertQuestion" parameterType="Question">
+		INSERT INTO question (        	
+        	student_type
+        	,question_type
+        	,right_answer
+        	,question_title
+        	,question_year_month
+        	,question_uri
+        	)
+        VALUES (
+        #{studentType}
+        ,#{questionType}
+        ,#{rightAnswer}
+        ,#{questionTitle}
+        ,#{questionYearMonth}
+        ,#{questionUri}
+        )
+    </insert>
+    
+    <update id="updateQuestion" parameterType="Question">
+    	UPDATE question
+   		SET 
+   			student_type = #{studentType}
+   			,question_type = #{questionType}
+   			,right_answer = #{rightAnswer}
+   			,question_title = #{questionTitle}
+   			,question_year_month = #{questionYearMonth}
+   			,question_uri = #{questionUri}
+ 		WHERE id = #{id};
+    </update>
+    
+    <delete id="deleteQuestion" parameterType="Long">
+    	DELETE
+		FROM question
+		WHERE id = #{id}
+    </delete>
+    
+    <select id="selectQuestion" parameterType="Long" resultMap="questionResultMap">
+		SELECT 
+			id
+			,student_type
+        	,question_type
+        	,right_answer
+        	,question_title
+        	,question_year_month
+        	,question_uri
+		  FROM question
+		  WHERE id = #{id}
+    </select>
+	
+	<select id="selectQuestionList" resultMap="questionResultMap">
+		SELECT 
+			id
+			,student_type
+        	,question_type
+        	,right_answer
+        	,question_title
+        	,question_year_month
+        	,question_uri
+		  FROM question
+	</select>
+    
+</mapper>
