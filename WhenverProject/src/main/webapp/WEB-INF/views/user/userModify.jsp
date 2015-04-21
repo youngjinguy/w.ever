@@ -39,12 +39,12 @@
 		</div>
 		<div class="form-group">
     		<div class="col-sm-offset-2 col-sm-10">
-      			<button type="submit" class="btn btn-default">수정</button>
+      			<button type="submit" class="btn btn-default">저장</button>
 				<button id="deleteBtn" type="button" class="btn btn-default">삭제</button>
     		</div>
   		</div>
 	</form>
-	<form id="deleteForm" action="${ctx}/user/${user.id}/delete" method="post"></form>
+	<form id="deleteForm" action="${ctx}/user/${user.id}/remove" method="post"></form>
 	</div>
 </body>
 </html>

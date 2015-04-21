@@ -25,6 +25,7 @@ public class UserController {
 	 */
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView userList(){
+		//
 		List<User> users = this.userMapper.selectUserList();
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("/user/userList");
@@ -36,8 +37,9 @@ public class UserController {
 	 * 사용자 등록 화면
 	 * @return
 	 */
-	@RequestMapping(value = "/regist", method = RequestMethod.GET)
-	public ModelAndView registUserForm(){
+	@RequestMapping(value = "/new", method = RequestMethod.GET)
+	public ModelAndView registerUserForm(){
+		//
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("/user/userRegist");
 		return mav;
@@ -48,10 +50,11 @@ public class UserController {
 	 * @param user
 	 * @return
 	 */
-	@RequestMapping(value = "/regist", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public ModelAndView registUser(
 			User user
 			){
+		//
 		this.userMapper.insertUser(user);
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("redirect:/user");
@@ -63,10 +66,11 @@ public class UserController {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{id}/modify", method = RequestMethod.GET)
 	public ModelAndView modifyUserForm(
 			@PathVariable(value = "id") Long id
 			){
+		//
 		User user = this.userMapper.selectUser(id);
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("/user/userModify");
@@ -85,6 +89,7 @@ public class UserController {
 			@PathVariable(value = "id") String id,
 			User user
 			){
+		//
 		this.userMapper.updateUser(user);
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("redirect:/user");
@@ -96,14 +101,30 @@ public class UserController {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping(value = "/{id}/delete", method = RequestMethod.POST)
+	@RequestMapping(value = "/{id}/remove", method = RequestMethod.POST)
 	public ModelAndView removeUser(
 			@PathVariable("id") Long id
 			){
+		//
 		this.userMapper.deleteUser(id);
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("redirect:/user");
 		return mav ;
 	}
 	
+	/**
+	 * 사용자 조회
+	 * @return
+	 */
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public ModelAndView showUser(
+			@PathVariable("id") Long id
+			){
+		//
+		User user = this.userMapper.selectUser(id);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("/user/userView");
+		mav.addObject("user", user);
+		return mav;
+	}
 }
