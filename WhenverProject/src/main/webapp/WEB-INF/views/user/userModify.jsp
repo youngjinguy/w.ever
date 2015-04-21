@@ -7,6 +7,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>사용자 수정</title>
 <meta name="submenu" content="user" />
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#deleteBtn').click(function(){
+			$('#deleteForm').submit();
+		});
+	});
+	
+</script>
 </head>
 <body>
 	<div class="container">
@@ -30,11 +38,13 @@
 			</div>
 		</div>
 		<div class="form-group">
-    	<div class="col-sm-offset-2 col-sm-10">
-      		<button type="submit" class="btn btn-default">수정</button>
+    		<div class="col-sm-offset-2 col-sm-10">
+      			<button type="submit" class="btn btn-default">수정</button>
+				<button id="deleteBtn" type="button" class="btn btn-default">삭제</button>
     		</div>
   		</div>
 	</form>
+	<form id="deleteForm" action="${ctx}/user/${user.id}/delete" method="post"></form>
 	</div>
 </body>
 </html>

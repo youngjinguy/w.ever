@@ -19,6 +19,10 @@ public class UserController {
 	@Autowired
 	private UserMapper userMapper;
 
+	/**
+	 * 사용자 목록
+	 * @return
+	 */
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView userList(){
 		List<User> users = this.userMapper.selectUserList();
@@ -28,6 +32,10 @@ public class UserController {
 		return mav;
 	}
 	
+	/**
+	 * 사용자 등록 화면
+	 * @return
+	 */
 	@RequestMapping(value = "/regist", method = RequestMethod.GET)
 	public ModelAndView registUserForm(){
 		ModelAndView mav = new ModelAndView();
@@ -35,6 +43,11 @@ public class UserController {
 		return mav;
 	}
 	
+	/**
+	 * 사용자 등록
+	 * @param user
+	 * @return
+	 */
 	@RequestMapping(value = "/regist", method = RequestMethod.POST)
 	public ModelAndView registUser(
 			User user
@@ -45,7 +58,11 @@ public class UserController {
 		return mav;
 	}
 	
-	
+	/**
+	 * 사용자 수정 화면
+	 * @param id
+	 * @return
+	 */
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ModelAndView modifyUserForm(
 			@PathVariable(value = "id") Long id
@@ -57,6 +74,12 @@ public class UserController {
 		return mav;
 	}
 	
+	/**
+	 * 사용자 수정
+	 * @param id
+	 * @param user
+	 * @return
+	 */
 	@RequestMapping(value = "/{id}", method = RequestMethod.POST)
 	public ModelAndView modifyUser(
 			@PathVariable(value = "id") String id,
@@ -66,6 +89,21 @@ public class UserController {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("redirect:/user");
 		return mav;
+	}
+	
+	/**
+	 * 사용자 삭제
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping(value = "/{id}/delete", method = RequestMethod.POST)
+	public ModelAndView removeUser(
+			@PathVariable("id") Long id
+			){
+		this.userMapper.deleteUser(id);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("redirect:/user");
+		return mav ;
 	}
 	
 }
