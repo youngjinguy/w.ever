@@ -4,33 +4,34 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>사용자 등록</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>사용자 상세보기</title>
 <meta name="submenu" content="user" />
 </head>
 <body>
 	<div class="container">
-	<form class="form-horizontal" action="${ctx}/user" method="post">
+	<form class="form-horizontal" action="${ctx}/user/${user.id}" method="post">
 		<div class="form-group">
 	    	<label for="email" class="col-md-2 control-label">Email</label>
 	    	<div class="col-md-10">
-	    		<input type="text" class="form-control" placeholder="Email" id="email" name="email" />
+	    		<label>${user.email}</label>
 			</div>
 		</div>
 		<div class="form-group">
 	    	<label for="cellPhoneNo" class="col-md-2 control-label">전화번호</label>
 	    	<div class="col-md-10">
-	    		<input type="text" class="form-control" placeholder="전화번호" id="cellPhoneNo" name="cellPhoneNo" />
+	    		<label>${user.cellPhoneNo}</label>
 			</div>
 		</div>
 		<div class="form-group">
 	    	<label for="birthDate" class="col-md-2 control-label">생년월일</label>
 	    	<div class="col-md-10">
-	    		<input type="text" class="form-control" placeholder="생년월일" id="birthDate" name="birthDate" />
+	    		<label>${user.birthDate}</label>
 			</div>
 		</div>
 		<div class="form-group">
-    	<div class="col-sm-offset-2 col-sm-10">
-      		<button type="submit" class="btn btn-default">등록</button>
+    		<div class="col-sm-offset-2 col-sm-10">
+    			<a class="btn btn-default" role="button" href="/wever/user/${user.id}/modify">수정</a>
     		</div>
   		</div>
 	</form>

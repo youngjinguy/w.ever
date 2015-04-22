@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="kr.whenever.repo.mapper.NoticeMapper">
+	<resultMap type="kr.whenever.domain.Notice" id="noticeReultMap">
+		<id property="id" column="id" />
+		<result property="title" column="notice_title" />
+		<result property="content" column="notice_content" />
+	</resultMap>
+	<insert id="insertNotice" parameterType="Notice">
+		INSERT INTO notice (
+		notice_title
+		,notice_content
+		)
+		VALUES (
+		#{title}
+		,#{content}
+		)
+	</insert>
+
+	<update id="updateUser" parameterType="User">
+		UPDATE notice
+		SET
+		notice_title = #{title}
+		,notice_content = #{content}
+		WHERE id = #{id};
+	</update>
+
+	<delete id="deleteUser" parameterType="Long">
+		DELETE
+		FROM notice
+		WHERE id = #{id}
+	</delete>
+
+	<select id="selectNotice" resultMap="noticeReultMap">
+		select
+		id,
+		notice_title,
+		notice_content
+		from notice
+	</select>
+	<select id="selectNoticeList" resultMap="noticeReultMap">
+		SELECT
+		id
+		,notice_title
+		,notice_content
+		from notice
+	</select>
+
+
+</mapper> 

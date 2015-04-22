@@ -36,7 +36,7 @@
         <property name="dataSource" ref="dataSource" />
     </bean>
     
-        <!-- 마이바티스 설정 // -->
+	<!-- 마이바티스 설정 S -->
     <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="typeAliasesPackage" value="kr.whenever.domain" />
         <property name="dataSource" ref="dataSource" />
@@ -47,8 +47,6 @@
             </array>
         </property>
     </bean>
-    <!--
-	 -->
 
     <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
         <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactoryBean" />
@@ -56,8 +54,8 @@
 
     <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="kr.whenever.repo" />
-        <!-- 각 폴더별 호출 여부 확인 -->
     </bean>
+	<!-- 마이바티스 설정 E -->
 
     <!-- annotation driven transaction setting -->
     <tx:annotation-driven transaction-manager="transactionManager" />

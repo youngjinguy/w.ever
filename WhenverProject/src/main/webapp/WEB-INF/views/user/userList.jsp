@@ -40,7 +40,7 @@
 		</c:forEach>
 	</table>
 	
-	<a class="btn btn-default" role="button" href="${ctx}/user/regist">등록</a>
+	<a class="btn btn-default" role="button" href="${ctx}/user/new">등록</a>
 	<a class="btn btn-default" role="button" href="javascript:ajax();">ajax json call</a>
 	</div>
 </body>
