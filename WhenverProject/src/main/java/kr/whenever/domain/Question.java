@@ -1,8 +1,8 @@
 package kr.whenever.domain;
 
 public class Question {
-	private Long id;
-	private String studentType;
+	private Long    id;
+	private String  studentType;
 	private String  questionType;
 	private String  rightAnswer;
 	private String  questionTitle;		

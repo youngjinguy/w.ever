@@ -10,7 +10,7 @@
 <script type="text/javascript">
 	function ajax(){
 		$.ajax({
-			url : '${ctx}/ws/question',
+			url : '${ctx}/question',
 			type : 'get',
 			dataType : 'json',
 			success : function(data){
@@ -21,6 +21,7 @@
 </script>
 </head>
 <body>
+
 	<div class="container">
 	<table class="table table-bordered">
 		<tr>
@@ -32,7 +33,7 @@
 			<td>날짜</td>
 			<td>Uri</td>
 		</tr>	
-		<c:forEach var="question" items="${users}">
+		<c:forEach var="question" items="${questions}">
 			<tr>
 				<td><a href="${ctx}/question/${question.id}">${question.id}</a></td>
 				<td>${question.studentType}</td>
