@@ -9,9 +9,9 @@ CREATE TABLE IF NOT EXISTS question (
 	id									int 					PRIMARY KEY AUTO_INCREMENT,
 	student_type					VARCHAR(50) 	DEFAULT NULL,
 	question_type					VARCHAR(50) 	DEFAULT NULL,
-	right_answer					VARCHAR(50)	DEFAULT NULL,
-	question_title					VARCHAR(50)	DEFAULT NULL,		
-	question_year_month		VARCHAR(50) 	DEFAULT NULL,
+	right_answer					VARCHAR(50)		DEFAULT NULL,
+	question_title					VARCHAR(50)		DEFAULT NULL,		
+	question_year_month				VARCHAR(50) 	DEFAULT NULL,
 	question_uri					VARCHAR(50) 	DEFAULT NULL
 );
 
