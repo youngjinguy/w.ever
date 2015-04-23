@@ -32,7 +32,7 @@
 			<td>날짜</td>
 			<td>Uri</td>
 		</tr>	
-		<c:forEach var="question" items="${users}">
+		<c:forEach var="question" items="${questions}">
 			<tr>
 				<td><a href="${ctx}/question/${question.id}">${question.id}</a></td>
 				<td>${question.studentType}</td>
