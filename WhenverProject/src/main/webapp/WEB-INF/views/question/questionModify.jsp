@@ -12,14 +12,38 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
+<script type="text/javascript">
+
+	function modifyQuestion()
+	{
+		if(document.getElementById("title").value == '' ){
+			alert("제목은 필수입니다.");
+		}
+		else
+			document.getElementById("modifyForm").submit();
+	}
+	
+	function deleteQuestion()
+	{
+		document.getElementById("deleteForm").submit();
+	}
+	
+	$('title').value;
+
+</script>
+
 </head>
 
-<form action="${ctx}/question/${question.id}" method="POST">
+<form id="modifyForm" action="${ctx}/question/${question.id}" method="POST">
 
 	학생 유형 : 
 	<select name="studentType">
 		<option value=""> 선택 </option>
-		<option value="ELE" <%="ELE".equals(question.getStudentType())?"selected":"" %>> 초등학교 </option>
+		
+		<c:if test="${question.studentType == 'ELE'}">selected="selected"</c:if>
+		
+		<option value="ELE" <c:if test="${question.studentType == 'ELE'}">selected="selected"</c:if>> 초등학교 </option>
 		<option value="JUNIOR" <%="JUNIOR".equals(question.getStudentType())?"selected" : "" %>> 중학교 </option>
 		<option value="HIGH" <%="HIGH".equals(question.getStudentType())?"selected" : "" %>> 고등학교 </option>
 	</select><br/>
@@ -31,15 +55,17 @@
 		<option value="ENGLISH" <%="ENGLISH".equals(question.getQuestionType())?"selected" : "" %>> 영어 </option>
 	</select><br/>
 	정답 : <input type="text" name="rightAnswer" value="${question.rightAnswer}"/><br/>
-	문제제목 : <input type="text" name="questionTitle" value="${question.questionTitle}"/><br/>
+	문제제목 : <input id="title" type="text" name="questionTitle" value="${question.questionTitle}"/><br/>
 	기출 : <input type="text" name="questionYearMonth" value="${question.questionYearMonth}"/><br/>
 	URI : <input type="text" name="questionTitle" value="${question.questionUri}"/><br/>
-	
-	<input type="submit" value="저장" />
+		
 </form>
 
-<form action="${ctx}/question/${question.id}/delete" method="POST">
-	<input type="submit" value="삭제" />
+<input type="submit" value="저장" onClick="modifyQueston();" />
+<input type="submit" value="삭제" onClick="deleteQueston();"/>
+	
+<form id="deleteForm" action="${ctx}/question/${question.id}/delete" method="POST">
 </form>
+
 </body>
 </html>
