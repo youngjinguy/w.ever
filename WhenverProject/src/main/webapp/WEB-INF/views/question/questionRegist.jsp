@@ -15,26 +15,37 @@
       	</div>
 		<form class="form-horizontal" action="${ctx}/question/regist" method="POST">			
 			
-			학생유형 :
-			<select name="studentType">
-				<option value=""> 선택 </option>
-				<option value="ELE"> 초등학교 </option>
-				<option value="JUNIOR"> 중학교 </option>
-				<option value="HIGH"> 고등학교 </option>
-			</select>
-			<br/>
-	
-			과목 :
-			<select name="questionType">
-				<option value=""> 선택 </option>
-				<option value="LANGUAGE"> 국어 </option>
-				<option value="MATH"> 수학 </option>
-				<option value="ENGLISH"> 영어 </option>
-			</select>
-			<br/>
-
-			정답 : <br/>
+			<div class="form-group">
+			    <label for="studentType" class="col-sm-2 control-label">학생유형</label>
+			    <div class="col-sm-10">
+			      <select name="studentType" class="form-control" id="studentType">>
+					  <option value=""> 선택 </option>
+					  <option value="ELE"> 초등학교 </option>
+					  <option value="JUNIOR"> 중학교 </option>
+					  <option value="HIGH"> 고등학교 </option>
+				  </select>
+			    </div>
+		  	</div>
+		  	
+		  	<div class="form-group">
+			    <label for="questionType" class="col-sm-2 control-label">과목</label>
+			    <div class="col-sm-10">
+			      <select name="questionType" class="form-control" id="questionType">>
+					  <option value=""> 선택 </option>
+					  <option value="LANGUAGE"> 국어 </option>
+					  <option value="MATH"> 수학 </option>
+					  <option value="ENGLISH"> 영어 </option>
+				  </select>
+			    </div>
+		  	</div>
 			
+			<div class="form-group">
+			    <label for="questionAnswer" class="col-sm-2 control-label">정답</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" id="questionAnswer" placeholder="정답" name="questionAnswer">
+			    </div>
+		  	</div>
+		  	
 			<div class="form-group">
 			    <label for="questionTitle" class="col-sm-2 control-label">문제 제목</label>
 			    <div class="col-sm-10">
@@ -60,7 +71,7 @@
 	
 	<input type="submit" value="등록" class="btn btn-default btn-primary"/>
 	<input type="reset" value="취소" class="btn btn-default"/>
-</form>
+	</form>
 </div>
 </body>
 </html>

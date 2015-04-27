@@ -28,44 +28,78 @@
 	{
 		document.getElementById("deleteForm").submit();
 	}
-	
-	$('title').value;
+
 
 </script>
 
 </head>
 
-<form id="modifyForm" action="${ctx}/question/${question.id}" method="POST">
-
-	학생 유형 : 
-	<select name="studentType">
-		<option value=""> 선택 </option>
+	<div class="container">
+		<div class="page-header">
+        	<h1>문제 수정</h1>
+      	</div>
+      	
+		<form class="form-horizontal" id="modifyForm" action="${ctx}/question/${question.id}" method="POST">
 		
-		<c:if test="${question.studentType == 'ELE'}">selected="selected"</c:if>
-		
-		<option value="ELE" <c:if test="${question.studentType == 'ELE'}">selected="selected"</c:if>> 초등학교 </option>
-		<option value="JUNIOR" <%="JUNIOR".equals(question.getStudentType())?"selected" : "" %>> 중학교 </option>
-		<option value="HIGH" <%="HIGH".equals(question.getStudentType())?"selected" : "" %>> 고등학교 </option>
-	</select><br/>
-	과목 : 
-	<select name="questionType">
-		<option value=""> 선택 </option>
-		<option value="LANGUAGE" <%="LANGUAGE".equals(question.getQuestionType())?"selected" : "" %>> 국어 </option>
-		<option value="MATH" <%="MATH".equals(question.getQuestionType())?"selected" : "" %>> 수학 </option>
-		<option value="ENGLISH" <%="ENGLISH".equals(question.getQuestionType())?"selected" : "" %>> 영어 </option>
-	</select><br/>
-	정답 : <input type="text" name="rightAnswer" value="${question.rightAnswer}"/><br/>
-	문제제목 : <input id="title" type="text" name="questionTitle" value="${question.questionTitle}"/><br/>
-	기출 : <input type="text" name="questionYearMonth" value="${question.questionYearMonth}"/><br/>
-	URI : <input type="text" name="questionTitle" value="${question.questionUri}"/><br/>
-		
-</form>
+			<div class="form-group">
+			    <label for="studentType" class="col-sm-2 control-label">학생유형</label>
+			    <div class="col-sm-10">
+			      <select name="studentType" class="form-control" id="studentType">>
+					  <option value=""> 선택 </option>
+					  <option value="ELE" <c:if test="${question.studentType == 'ELE'}">selected="selected"</c:if>> 초등학교 </option>
+				  	  <option value="JUNIOR"<c:if test="${question.studentType == 'JUNIOR'}">selected="selected"</c:if>> 중학교 </option>
+				  	  <option value="HIGH" <c:if test="${question.studentType == 'HIGH'}">selected="selected"</c:if>> 고등학교 </option>
+				  </select>
+			    </div>
+		  	</div>
 
-<input type="submit" value="저장" onClick="modifyQueston();" />
-<input type="submit" value="삭제" onClick="deleteQueston();"/>
-	
-<form id="deleteForm" action="${ctx}/question/${question.id}/delete" method="POST">
-</form>
+			<div class="form-group">
+			    <label for="questionType" class="col-sm-2 control-label">과목</label>
+			    <div class="col-sm-10">
+			      <select name="questionType" class="form-control" id="questionType">>
+					  <option value=""> 선택 </option>
+					  <option value="LANGUAGE" <c:if test="${question.studentType == 'LANGUAGE'}">selected="selected"</c:if>> 국어 </option>
+					  <option value="MATH" <c:if test="${question.studentType == 'MATH'}">selected="selected"</c:if>> 수학 </option>
+					  <option value="ENGLISH" <c:if test="${question.studentType == 'ENGLISH'}">selected="selected"</c:if>> 영어 </option>
+				  </select>
+			    </div>
+		  	</div>
 
+			<div class="form-group">
+			    <label for="questionAnswer" class="col-sm-2 control-label">정답</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" id="questionAnswer" placeholder="정답" name="questionAnswer" value="${question.rightAnswer}">
+			    </div>
+		  	</div>
+		  	
+			<div class="form-group">
+			    <label for="questionTitle" class="col-sm-2 control-label">문제 제목</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" id="questionTitle" placeholder="문제제목" name="questionTitle" value="${question.questionTitle}">
+			    </div>
+		  	</div>
+			
+			<div class="form-group">
+			    <label for="questionYearMonth" class="col-sm-2 control-label">기출 날짜</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" id="questionYearMonth" placeholder="기출 날짜" name="questionYearMonth" value="${question.questionYearMonth}">
+			    </div>
+		  	</div>
+		  	
+		  	<div class="form-group">
+			    <label for="questionUri" class="col-sm-2 control-label">URI</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" id="questionUri" placeholder="URI" name="questionUri" value="${question.questionUri}">
+			    </div>
+		  	</div>		  				
+				
+		</form>
+		
+		<input type="submit" value="저장" onClick="modifyQueston();" class="btn btn-default btn-primary"/>
+		<input type="submit" value="삭제" onClick="deleteQueston();" class="btn btn-default"/>
+			
+		<form class="form-horizontal" id="deleteForm" action="${ctx}/question/${question.id}/delete" method="POST">
+		</form>
+	</div>
 </body>
 </html>

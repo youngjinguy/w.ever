@@ -76,8 +76,8 @@ public class QuestionController {
 			@PathVariable(value = "id") Long id,
 			Question question
 			){
-		question.setId(id);
-		this.questionMapper.updateQuestion(question);
+		question.setId(id);		
+		this.questionMapper.updateQuestion(question);		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("redirect:/question");
 		return mav;
