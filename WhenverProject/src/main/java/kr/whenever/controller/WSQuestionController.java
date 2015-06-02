@@ -1,5 +1,6 @@
 package kr.whenever.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import kr.whenever.domain.Question;
@@ -21,11 +22,20 @@ public class WSQuestionController {
 	@ResponseBody
 	@RequestMapping(method = RequestMethod.GET)
 	public List<Question> questionList(){
-		List<Question> list = questionMapper.selectQuestionList();
-		
+//		List<Question> list = questionMapper.selectQuestionList();
+		List<Question> list = getQuestions();
 		return list;
 	}
 	
-	
-	
+	private List<Question> getQuestions(){
+		List<Question> list = new ArrayList<Question>();
+		for(int index=0;index<5;index++){
+			Question question = new Question();
+			question.setId((long) index);
+			question.setQuestionTitle("제목"+index);
+			question.setQuestionType("타입"+index);
+			list.add(question);
+		}
+		return list;
+	}
 }
