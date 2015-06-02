@@ -16,8 +16,8 @@ public class UserServiceImpl implements UserService{
 	private UserRepository userRepository;
 	
 	@Override
-	public void registUser(User user) {
-		this.userRepository.registUser(user);
+	public void registerUser(User user) {
+		this.userRepository.registerUser(user);
 	}
 	
 	@Override

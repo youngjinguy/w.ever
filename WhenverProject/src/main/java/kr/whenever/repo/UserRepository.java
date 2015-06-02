@@ -14,7 +14,7 @@ public class UserRepository{
 	@Autowired
 	private UserMapper userMapper;
 
-	public void registUser(User user) {
+	public void registerUser(User user) {
 		this.userMapper.insertUser(user);
 	}
 

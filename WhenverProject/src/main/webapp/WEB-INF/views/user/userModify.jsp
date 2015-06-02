@@ -9,7 +9,7 @@
 <meta name="submenu" content="user" />
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('#deleteBtn').click(function(){
+		$('#btnDelete').click(function(){
 			$('#deleteForm').submit();
 		});
 	});
@@ -40,7 +40,7 @@
 		<div class="form-group">
     		<div class="col-sm-offset-2 col-sm-10">
       			<button type="submit" class="btn btn-default">저장</button>
-				<button id="deleteBtn" type="button" class="btn btn-default">삭제</button>
+				<button id="btnDelete" type="button" class="btn btn-default">삭제</button>
     		</div>
   		</div>
 	</form>

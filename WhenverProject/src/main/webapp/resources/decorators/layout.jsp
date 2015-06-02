@@ -26,7 +26,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">사용자<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a href="${ctx}/user">사용자목록</a></li>
-                  <li><a href="${ctx}/user/regist">사용자등록</a></li>
+                  <li><a href="${ctx}/user/new">사용자등록</a></li>
                 </ul>
               </li>
               <li class="dropdown <c:if test="${submenu eq 'question'}">active</c:if>">
