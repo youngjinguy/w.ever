@@ -13,7 +13,7 @@
 		<div class="page-header">
         	<h1>문제 등록</h1>
       	</div>
-		<form class="form-horizontal" action="${ctx}/question/regist" method="POST">			
+		<form class="form-horizontal" action="${ctx}/question" method="POST">			
 			
 			<div class="form-group">
 			    <label for="studentType" class="col-sm-2 control-label">학생유형</label>

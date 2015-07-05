@@ -11,9 +11,9 @@ public interface QuestionMapper {
 
 	void updateQuestion(Question question);
 	
-	void deleteQuestion(@Param("id") Long id);
+	void deleteQuestion(@Param("id") String id);
 	
-	Question selectQuestion(@Param("id") Long id);
+	Question selectQuestion(@Param("id") String id);
 
-	List<Question> selectQuestionList();
+	List<Question> selectQuestions();
 }
