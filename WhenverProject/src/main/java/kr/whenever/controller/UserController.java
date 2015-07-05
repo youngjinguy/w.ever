@@ -68,7 +68,7 @@ public class UserController {
 	 */
 	@RequestMapping(value = "/{id}/modify", method = RequestMethod.GET)
 	public ModelAndView modifyUserForm(
-			@PathVariable(value = "id") Long id
+			@PathVariable(value = "id") String id
 			){
 		//
 		User user = this.userMapper.selectUser(id);
@@ -103,7 +103,7 @@ public class UserController {
 	 */
 	@RequestMapping(value = "/{id}/remove", method = RequestMethod.POST)
 	public ModelAndView removeUser(
-			@PathVariable("id") Long id
+			@PathVariable("id") String id
 			){
 		//
 		this.userMapper.deleteUser(id);
@@ -118,7 +118,7 @@ public class UserController {
 	 */
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ModelAndView showUser(
-			@PathVariable("id") Long id
+			@PathVariable("id") String id
 			){
 		//
 		User user = this.userMapper.selectUser(id);

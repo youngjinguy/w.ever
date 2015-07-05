@@ -20,21 +20,33 @@
 	<div class="container">
 	<form class="form-horizontal" action="${ctx}/user/${user.id}" method="post">
 		<div class="form-group">
-	    	<label for="email" class="col-md-2 control-label">Email</label>
+	    	<label for="password" class="col-md-2 control-label">PASSWORD</label>
 	    	<div class="col-md-10">
-	    		<input type="text" class="form-control" placeholder="Email" id="email" name="email" value="${user.email}"/>
+	    		<input type="password" class="form-control" placeholder="password" id="password" name="password" value="${user.password}"/>
 			</div>
 		</div>
 		<div class="form-group">
-	    	<label for="cellPhoneNo" class="col-md-2 control-label">전화번호</label>
+	    	<label for="cellPhoneNo1" class="col-md-2 control-label">전화번호</label>
 	    	<div class="col-md-10">
-	    		<input type="text" class="form-control" placeholder="전화번호" id="cellPhoneNo" name="cellPhoneNo" value="${user.cellPhoneNo}"/>
+	    		<input type="text" class="form-control" placeholder="전화번호" id="cellPhoneNo1" name="cellPhoneNo1" value="${user.cellPhoneNo1}"/>
+			</div>
+		</div>
+		<div class="form-group">
+	    	<label for="cellPhoneNo2" class="col-md-2 control-label">상대방전화번호</label>
+	    	<div class="col-md-10">
+	    		<input type="text" class="form-control" placeholder="상대방전화번호" id="cellPhoneNo2" name="cellPhoneNo2" value="${user.cellPhoneNo2}"/>
 			</div>
 		</div>
 		<div class="form-group">
 	    	<label for="birthDate" class="col-md-2 control-label">생년월일</label>
 	    	<div class="col-md-10">
 	    		<input type="text" class="form-control" placeholder="생년월일" id="birthDate" name="birthDate" value="${user.birthDate}"/>
+			</div>
+		</div>
+		<div class="form-group">
+	    	<label for="school" class="col-md-2 control-label">학교</label>
+	    	<div class="col-md-10">
+	    		<input type="text" class="form-control" placeholder="학교" id="school" name="school" value="${user.school}"/>
 			</div>
 		</div>
 		<div class="form-group">

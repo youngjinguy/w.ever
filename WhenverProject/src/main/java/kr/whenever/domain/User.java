@@ -2,43 +2,68 @@ package kr.whenever.domain;
 
 public class User {
 	
-	private Long id;
+	private String id;
 	
-	private String email;
+	private	String password;
 	
-	private String cellPhoneNo;
+	private String nickname;
+	
+	private String cellPhoneNo1;
+	
+	private String cellPhoneNo2;
 	
 	private String birthDate;
 	
+	private String school;
+	
+	private String type;
+	
 	public User() {}
 	
+	/*
 	public User(String email, String cellPhoneNo) {
-		this.email = email;
-		this.cellPhoneNo = cellPhoneNo;
+		
 	}
+	*/
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-	public String getCellPhoneNo() {
-		return cellPhoneNo;
+	public String getNickname() {
+		return nickname;
 	}
 
-	public void setCellPhoneNo(String cellPhoneNo) {
-		this.cellPhoneNo = cellPhoneNo;
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	public String getCellPhoneNo1() {
+		return cellPhoneNo1;
+	}
+
+	public void setCellPhoneNo1(String cellPhoneNo1) {
+		this.cellPhoneNo1 = cellPhoneNo1;
+	}
+
+	public String getCellPhoneNo2() {
+		return cellPhoneNo2;
+	}
+
+	public void setCellPhoneNo2(String cellPhoneNo2) {
+		this.cellPhoneNo2 = cellPhoneNo2;
 	}
 
 	public String getBirthDate() {
@@ -48,5 +73,23 @@ public class User {
 	public void setBirthDate(String birthDate) {
 		this.birthDate = birthDate;
 	}
+
+	public String getSchool() {
+		return school;
+	}
+
+	public void setSchool(String school) {
+		this.school = school;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+
 
 }

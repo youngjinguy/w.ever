@@ -27,12 +27,12 @@ public class UserServiceImpl implements UserService{
 	}
 	
 	@Override
-	public void removeUser(Long id) {
+	public void removeUser(String id) {
 		this.userRepository.removeUser(id);
 	}
 	
 	@Override
-	public User findUser(Long id) {
+	public User findUser(String id) {
 		return this.userRepository.findUser(id);
 	}
 

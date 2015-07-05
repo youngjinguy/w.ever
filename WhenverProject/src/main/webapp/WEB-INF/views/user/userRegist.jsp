@@ -11,21 +11,21 @@
 	<div class="container">
 		<form class="form-horizontal" action="${ctx}/user" method="post">
 			<div class="form-group">
-		    	<label for="userId" class="col-md-2 control-label">ID</label>
+		    	<label for="id" class="col-md-2 control-label">ID</label>
 		    	<div class="col-md-10">
-		    		<input type="text" class="form-control" placeholder="UserId(email)" id="UserId" name="UserId" />
+		    		<input type="text" class="form-control" placeholder="Id(email)" id="id" name="id" />
 				</div>
 			</div>
 			<div class="form-group">
-		    	<label for="userPw" class="col-md-2 control-label">PASSWORD</label>
+		    	<label for="password" class="col-md-2 control-label">PASSWORD</label>
 		    	<div class="col-md-10">
-		    		<input type="password" class="form-control" placeholder="UserPw" id="UserPw" name="UserPw" />
+		    		<input type="password" class="form-control" placeholder="Password" id="password" name="password" />
 				</div>
 			</div>
 			<div class="form-group">
-		    	<label for="userNick" class="col-md-2 control-label">별명</label>
+		    	<label for="nickname" class="col-md-2 control-label">별명</label>
 		    	<div class="col-md-10">
-		    		<input type="text" class="form-control" placeholder="UserNick" id="UserNick" name="UserNick" />
+		    		<input type="text" class="form-control" placeholder="Nickname" id="nickname" name="nickname" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -43,14 +43,20 @@
 			<div class="form-group">
 		    	<label for="birthDate" class="col-md-2 control-label">생년월일</label>
 		    	<div class="col-md-10">
-		    		<input type="text" class="form-control" placeholder="생년월일" id="birthDate" name="birthDate" />
+		    		<input type="text" class="form-control" placeholder="YYYYMMDD" id="birthDate" name="birthDate" />
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="userType" class="col-md-2 control-label">UserType</label>
-				<input type="radio" name="userType" value="student">학생
-				<input type="radio" name="userType" value="parent">학부모
-				<input type="radio" name="userType" value="admin">관리자
+		    	<label for="school" class="col-md-2 control-label">학교</label>
+		    	<div class="col-md-10">
+		    		<input type="text" class="form-control" placeholder="학교" id="school" name="school" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="type" class="col-md-2 control-label">UserType</label>
+				<input type="radio" name="type" value="student">학생
+				<input type="radio" name="type" value="parent">학부모
+				<input type="radio" name="type" value="admin">관리자
 			</div>
 			<div class="form-group">
 	    	<div class="col-sm-offset-2 col-sm-10">

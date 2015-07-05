@@ -26,16 +26,18 @@
 	
 		<tr>
 			<td>아이디</td>
-			<td>이메일</td>
+			<td>별명</td>
 			<td>핸드폰번호</td>
 			<td>생년월일</td>
+			<td>유저등급</td>
 		</tr>	
 		<c:forEach var="user" items="${users}">
 			<tr>
 				<td><a href="${ctx}/user/${user.id}">${user.id}</a></td>
-				<td>${user.email}</td>
-				<td>${user.cellPhoneNo}</td>
+				<td>${user.nickname}</td>
+				<td>${user.cellPhoneNo1}</td>
 				<td>${user.birthDate}</td>
+				<td>${user.type}</td>
 			</tr>
 		</c:forEach>
 	</table>

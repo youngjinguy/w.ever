@@ -22,11 +22,11 @@ public class UserRepository{
 		this.userMapper.updateUser(user);
 	}
 	
-	public void removeUser(Long id) {
+	public void removeUser(String id) {
 		this.userMapper.deleteUser(id);
 	}
 	
-	public User findUser(Long id) {
+	public User findUser(String id) {
 		return this.userMapper.selectUser(id);
 	}
 

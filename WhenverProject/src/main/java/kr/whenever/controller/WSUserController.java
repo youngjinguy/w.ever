@@ -27,7 +27,7 @@ public class WSUserController {
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public @ResponseBody User userData(
-			@PathVariable(value = "id") Long id
+			@PathVariable(value = "id") String id
 			){
 		User user = this.userMapper.selectUser(id);
 		return user;
