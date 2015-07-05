@@ -1,10 +1,8 @@
 package kr.whenever.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import kr.whenever.domain.Question;
-import kr.whenever.domain.User;
 import kr.whenever.repo.mapper.QuestionMapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
 
 @Controller
 @RequestMapping(value = "/question")
