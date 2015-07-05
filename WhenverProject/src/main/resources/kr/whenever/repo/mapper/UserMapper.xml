@@ -42,9 +42,12 @@
     <update id="updateUser" parameterType="User">
     	UPDATE w_user
    		SET 
-   			email = #{email}
-   			,cell_phone_no = #{cellPhoneNo}
-   			,birth_date = #{birthDate}
+   			PASSWORD = #{password}
+   			,NICKNAME = #{nickname}
+   			,USER_PHONE = #{cellPhoneNo1}
+   			,OTHER_PHONE = #{cellPhoneNo2}
+   			,BIRTH_DATE = #{birthDate}
+   			,USER_SCHOOL = #{school}
  		WHERE USER_ID = #{id};
     </update>
     

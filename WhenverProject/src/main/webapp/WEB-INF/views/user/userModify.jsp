@@ -26,6 +26,12 @@
 			</div>
 		</div>
 		<div class="form-group">
+	    	<label for="nickname" class="col-md-2 control-label">NICKNAME</label>
+	    	<div class="col-md-10">
+	    		<input type="text" class="form-control" placeholder="nickname" id="nickname" name="nickname" value="${user.nickname}"/>
+			</div>
+		</div>
+		<div class="form-group">
 	    	<label for="cellPhoneNo1" class="col-md-2 control-label">전화번호</label>
 	    	<div class="col-md-10">
 	    		<input type="text" class="form-control" placeholder="전화번호" id="cellPhoneNo1" name="cellPhoneNo1" value="${user.cellPhoneNo1}"/>
