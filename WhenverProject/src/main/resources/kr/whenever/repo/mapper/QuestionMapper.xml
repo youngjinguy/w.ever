@@ -6,76 +6,96 @@
    
 <mapper namespace="kr.whenever.repo.mapper.QuestionMapper">
     <resultMap id="questionResultMap" type="Question" >
-        <id     	property="id"        			column="id"/>
-        <result 	property="studentType"         	column="student_type"/>
-        <result 	property="questionType"  		column="question_type"/>
-        <result 	property="rightAnswer"  		column="right_answer"/>
-        <result 	property="questionTitle"  		column="question_title"/>
-        <result 	property="questionYearMonth"  	column="question_year_month"/>
-        <result 	property="questionUri"  		column="question_uri"/>        
+        <id     	property="id"        	column="QUESTION_ID"/>
+        <result 	property="section"		column="QUESTION_SECTION"/>
+        <result 	property="answer"  		column="ANSWER"/>
+        <result 	property="content"  	column="QUESTION_CONTENT"/>
+        <result 	property="selection1"	column="SELECTION_1"/>
+        <result 	property="selection2"	column="SELECTION_2"/>
+        <result 	property="selection3"	column="SELECTION_3"/>
+        <result 	property="selection4"	column="SELECTION_4"/>
+        <result 	property="selection5"	column="SELECTION_5"/>
+        <result 	property="keyword"  	column="QUESTION_KEYWORD"/>
     </resultMap>
 
-	
     <insert id="insertQuestion" parameterType="Question">
-		INSERT INTO question (        	
-        	student_type
-        	,question_type
-        	,right_answer
-        	,question_title
-        	,question_year_month
-        	,question_uri
+		INSERT INTO W_QUESTION (        	
+        	QUESTION_ID
+        	,QUESTION_SECTION
+        	,ANSWER		
+        	,QUESTION_CONTENT	
+        	,SELECTION_1
+        	,SELECTION_2
+        	,SELECTION_3
+        	,SELECTION_4
+        	,SELECTION_5
+        	,QUESTION_KEYWORD
         	)
         VALUES (
-        #{studentType}
-        ,#{questionType}
-        ,#{rightAnswer}
-        ,#{questionTitle}
-        ,#{questionYearMonth}
-        ,#{questionUri}
+        #{id}
+        ,#{section}
+        ,#{answer}
+        ,#{content}
+        ,#{selection1}
+        ,#{selection2}
+        ,#{selection3}
+        ,#{selection4}
+        ,#{selection5}
+        ,#{keyword}
         )
     </insert>
     
     <update id="updateQuestion" parameterType="Question">
-    	UPDATE question
+    	UPDATE W_QUESTION
    		SET 
-   			student_type = #{studentType}
-   			,question_type = #{questionType}
-   			,right_answer = #{rightAnswer}
-   			,question_title = #{questionTitle}
-   			,question_year_month = #{questionYearMonth}
-   			,question_uri = #{questionUri}
+   			QUESTION_ID = #{studentType}
+   			,QUESTION_SECTION = #{section}
+   			,ANSWER = #{answer}
+   			,QUESTION_CONTENT = #{content}
+   			,SELECTION_1 = #{selection1}
+   			,SELECTION_2 = #{selection2}
+   			,SELECTION_3 = #{selection3}
+   			,SELECTION_4 = #{selection4}
+   			,SELECTION_5 = #{selection5}
+   			,QUESTION_KEYWORD = #{keyword}
  		WHERE id = #{id};
     </update>
     
-    <delete id="deleteQuestion" parameterType="Long">
+    <delete id="deleteQuestion" parameterType="String">
     	DELETE
-		FROM question
-		WHERE id = #{id}
+		FROM W_QUESTION
+		WHERE QUESTION_ID = #{id}
     </delete>
     
-    <select id="selectQuestion" parameterType="Long" resultMap="questionResultMap">
+    <select id="selectQuestion" parameterType="String" resultMap="questionResultMap">
 		SELECT 
-			id
-			,student_type
-        	,question_type
-        	,right_answer
-        	,question_title
-        	,question_year_month
-        	,question_uri
-		  FROM question
-		  WHERE id = #{id}
+        	QUESTION_ID
+        	,QUESTION_SECTION
+        	,ANSWER		
+        	,QUESTION_CONTENT	
+        	,SELECTION_1
+        	,SELECTION_2
+        	,SELECTION_3
+        	,SELECTION_4
+        	,SELECTION_5
+        	,QUESTION_KEYWORD
+		  FROM W_QUESTION
+		  WHERE QUESTION_ID = #{id}
     </select>
 	
-	<select id="selectQuestionList" resultMap="questionResultMap">
+	<select id="selectQuestions" resultMap="questionResultMap">
 		SELECT 
-			id
-			,student_type
-        	,question_type
-        	,right_answer
-        	,question_title
-        	,question_year_month
-        	,question_uri
-		  FROM question
+        	QUESTION_ID
+        	,QUESTION_SECTION
+        	,ANSWER
+        	,QUESTION_CONTENT
+        	,SELECTION_1
+        	,SELECTION_2
+        	,SELECTION_3
+        	,SELECTION_4
+        	,SELECTION_5
+        	,QUESTION_KEYWORD
+		  FROM W_QUESTION
 	</select>
     
 </mapper>

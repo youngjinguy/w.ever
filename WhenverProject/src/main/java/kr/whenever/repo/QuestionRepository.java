@@ -21,15 +21,15 @@ public class QuestionRepository {
 		this.questionMapper.updateQuestion(question);
 	}
 	
-	public void removeQuestion(Long id) {
+	public void removeQuestion(String id) {
 		this.questionMapper.deleteQuestion(id);
 	}
 	
-	public Question findQuestion(Long id) {
+	public Question findQuestion(String id) {
 		return this.questionMapper.selectQuestion(id);
 	}
 
-	public List<Question> findQuestionList() {
-		return this.questionMapper.selectQuestionList();
+	public List<Question> findQuestions() {
+		return this.questionMapper.selectQuestions();
 	}
 }

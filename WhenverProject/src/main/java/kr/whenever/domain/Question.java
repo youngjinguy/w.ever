@@ -1,56 +1,127 @@
 package kr.whenever.domain;
 
 public class Question {
-	private Long    id;
-	private String  studentType;
-	private String  questionType;
-	private String  rightAnswer;
-	private String  questionTitle;		
-	private String  questionYearMonth;
-	private String  questionUri;
+	//
+	/** 문제ID */
+	private String id;
+
+	/** 문제타입(과목) */
+	private String section;
 	
-	public Long getId() {
+	/** 문제 */
+	private String content;
+
+	/** 정답 */
+	private String answer;
+	
+	/** 보기1 */
+	private String selection1;
+	
+	/** 보기2 */
+	private String selection2;
+	
+	/** 보기3 */
+	private String selection3;
+	
+	/** 보기4 */
+	private String selection4;
+
+	/** 보기5 */
+	private String selection5;
+	
+	/** 문제키워드 */
+	private String keyword;
+	
+	
+	public Question() {
+		//
+	}
+	
+	public Question(String id, String section, String answer, String content){
+		//
+		this.id = id;
+		this.section = section;
+		this.answer = answer;
+		this.content = content;
+	}
+
+	public String getId() {
 		return id;
 	}
-	
-	public void setId(Long id) {
+
+	public void setId(String id) {
 		this.id = id;
 	}
-	public String getStudentType() {
-		return studentType;
+
+	public String getSection() {
+		return section;
 	}
-	public void setStudentType(String studentType) {
-		this.studentType = studentType;
+
+	public void setSection(String section) {
+		this.section = section;
 	}
-	public String getQuestionType() {
-		return questionType;
+
+	public String getContent() {
+		return content;
 	}
-	public void setQuestionType(String questionType) {
-		this.questionType = questionType;
+
+	public void setContent(String content) {
+		this.content = content;
 	}
-	public String getRightAnswer() {
-		return rightAnswer;
+
+	public String getAnswer() {
+		return answer;
 	}
-	public void setRightAnswer(String rightAnswer) {
-		this.rightAnswer = rightAnswer;
+	
+	public void setAnswer(String answer) {
+		this.answer = answer;
 	}
-	public String getQuestionTitle() {
-		return questionTitle;
+
+	public String getSelection1() {
+		return selection1;
 	}
-	public void setQuestionTitle(String questionTitle) {
-		this.questionTitle = questionTitle;
+
+	public void setSelection1(String selection1) {
+		this.selection1 = selection1;
 	}
-	public String getQuestionYearMonth() {
-		return questionYearMonth;
+
+	public String getSelection2() {
+		return selection2;
 	}
-	public void setQuestionYearMonth(String questionYearMonth) {
-		this.questionYearMonth = questionYearMonth;
+
+	public void setSelection2(String selection2) {
+		this.selection2 = selection2;
 	}
-	public String getQuestionUri() {
-		return questionUri;
+
+	public String getSelection3() {
+		return selection3;
 	}
-	public void setQuestionUri(String questionUri) {
-		this.questionUri = questionUri;
+
+	public void setSelection3(String selection3) {
+		this.selection3 = selection3;
+	}
+
+	public String getSelection4() {
+		return selection4;
+	}
+
+	public void setSelection4(String selection4) {
+		this.selection4 = selection4;
+	}
+
+	public String getSelection5() {
+		return selection5;
+	}
+
+	public void setSelection5(String selection5) {
+		this.selection5 = selection5;
+	}
+
+	public String getKeyword() {
+		return keyword;
+	}
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
 	}
 	
 }

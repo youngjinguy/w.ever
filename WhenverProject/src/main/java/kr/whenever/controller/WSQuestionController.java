@@ -30,10 +30,7 @@ public class WSQuestionController {
 	private List<Question> getQuestions(){
 		List<Question> list = new ArrayList<Question>();
 		for(int index=0;index<5;index++){
-			Question question = new Question();
-			question.setId((long) index);
-			question.setQuestionTitle("제목"+index);
-			question.setQuestionType("타입"+index);
+			Question question = new Question(String.valueOf(index), "언어" + index, String.valueOf(index), "내용" + index);
 			list.add(question);
 		}
 		return list;

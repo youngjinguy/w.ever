@@ -33,7 +33,7 @@
                 <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">문제<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a href="${ctx}/question">문제목록</a></li>
-                  <li><a href="${ctx}/question/regist">문제등록</a></li>
+                  <li><a href="${ctx}/question/new">문제등록</a></li>
                 </ul>
               </li>
               <li class="dropdown <c:if test="${submenu eq 'notice'}">active</c:if>">
