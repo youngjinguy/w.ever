@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+   
+<mapper namespace="kr.whenever.repo.mapper.NewsMapper">
+    <resultMap id="newsResultMap" type="News" >
+        <id     	property="id"        		column="NEWS_ID"/>
+        <result		property="title"			column="NEWS_TITLE"/>
+        <result		property="date"				column="NEWS_DATE"/>
+        <result 	property="company"  		column="NEWS_COMPANY"/>
+        <result 	property="content"  		column="NEWS_CONTENT"/>
+        <result 	property="uid"  			column="USER_ID"/>
+    </resultMap>
+
+    <insert id="insertNews" parameterType="News">
+		INSERT INTO w_news (
+        	NEWS_TITLE
+        	,NEWS_DATE
+        	,NEWS_COMPANY
+        	,NEWS_CONTENT
+        	,USER_ID
+        	)
+        VALUES (
+        #{title}
+        ,#{date}
+        ,#{company}
+        ,#{content}
+        ,#{uid}
+        )
+    </insert>
+    
+    <update id="updateNews" parameterType="News">
+    	UPDATE w_news
+   		SET 
+   			NEWS_TITLE = #{title}
+   			,NEWS_DATE = #{date}
+   			,NEWS_COMPANY = #{company}
+   			,NEWS_CONTENT = #{content}
+   			,USER_ID = #{uid}
+ 		WHERE NEWS_ID = #{id};
+    </update>
+    
+    <delete id="deleteNews" parameterType="int">
+    	DELETE
+		FROM w_news
+		WHERE NEWS_ID = #{id}
+    </delete>
+    
+    <select id="selectNews" parameterType="int" resultMap="newsResultMap">
+		SELECT 
+			NEWS_ID
+			,NEWS_TITLE
+        	,NEWS_DATE
+        	,NEWS_COMPANY
+        	,NEWS_CONTENT
+        	,USER_ID
+		  FROM w_news
+		  WHERE NEWS_ID = #{id}
+    </select>
+	
+	<select id="selectNewsList" resultMap="newsResultMap">
+		SELECT 
+			NEWS_ID
+			,NEWS_TITLE
+        	,NEWS_DATE
+        	,NEWS_COMPANY
+        	,USER_ID
+		  FROM w_news
+	</select>
+    
+</mapper>

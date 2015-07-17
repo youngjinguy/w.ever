@@ -40,7 +40,14 @@
                 <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">공지사항<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a href="${ctx}/notice">공지사항목록</a></li>
-                  <li><a href="${ctx}/notice/regist">공지사항등록</a></li>
+                  <li><a href="${ctx}/notice/new">공지사항등록</a></li>
+                </ul>
+              </li>
+              <li class="dropdown <c:if test="${submenu eq 'news'}">active</c:if>">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">뉴스<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="${ctx}/news">뉴스목록</a></li>
+                  <li><a href="${ctx}/news/new">뉴스등록</a></li>
                 </ul>
               </li>
             </ul>

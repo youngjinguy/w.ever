@@ -20,7 +20,6 @@
 
     <insert id="insertQuestion" parameterType="Question">
 		INSERT INTO W_QUESTION (        	
-        	QUESTION_ID
         	,QUESTION_SECTION
         	,ANSWER		
         	,QUESTION_CONTENT	
@@ -32,7 +31,6 @@
         	,QUESTION_KEYWORD
         	)
         VALUES (
-        #{id}
         ,#{section}
         ,#{answer}
         ,#{content}
@@ -48,7 +46,7 @@
     <update id="updateQuestion" parameterType="Question">
     	UPDATE W_QUESTION
    		SET 
-   			QUESTION_ID = #{studentType}
+   			QUESTION_ID = #{id}
    			,QUESTION_SECTION = #{section}
    			,ANSWER = #{answer}
    			,QUESTION_CONTENT = #{content}
@@ -61,13 +59,13 @@
  		WHERE id = #{id};
     </update>
     
-    <delete id="deleteQuestion" parameterType="String">
+    <delete id="deleteQuestion" parameterType="int">
     	DELETE
 		FROM W_QUESTION
 		WHERE QUESTION_ID = #{id}
     </delete>
     
-    <select id="selectQuestion" parameterType="String" resultMap="questionResultMap">
+    <select id="selectQuestion" parameterType="int" resultMap="questionResultMap">
 		SELECT 
         	QUESTION_ID
         	,QUESTION_SECTION
