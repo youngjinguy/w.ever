@@ -3,7 +3,7 @@ package kr.whenever.domain;
 public class Question {
 	//
 	/** 문제ID */
-	private String id;
+	private int id;
 
 	/** 문제타입(과목) */
 	private String section;
@@ -37,7 +37,7 @@ public class Question {
 		//
 	}
 	
-	public Question(String id, String section, String answer, String content){
+	public Question(int id, String section, String answer, String content){
 		//
 		this.id = id;
 		this.section = section;
@@ -45,11 +45,11 @@ public class Question {
 		this.content = content;
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

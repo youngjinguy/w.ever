@@ -29,6 +29,10 @@ public class QuestionController {
 		return mav;
 	}
 	
+	/**
+	 * 문제 등록 화면
+	 * @return
+	 */
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
 	public ModelAndView registerQuestionForm(){
 		//
@@ -37,6 +41,11 @@ public class QuestionController {
 		return mav;
 	}
 	
+	/**
+	 * 문제 등록
+	 * @param question
+	 * @return
+	 */
 	@RequestMapping(method = RequestMethod.POST)
 	public ModelAndView registerQuestion(
 			Question question
@@ -45,6 +54,7 @@ public class QuestionController {
 			@RequestParam("type") String type*/
 			){
 		//
+		this.questionMapper.insertQuestion(question);
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("redirect:/question");
 		return mav;
@@ -53,7 +63,7 @@ public class QuestionController {
 	
 	@RequestMapping(value = "/{id}/modify", method = RequestMethod.GET)
 	public ModelAndView modifyQuestionForm(
-			@PathVariable(value = "id") String id
+			@PathVariable(value = "id") int id
 			){
 		//
 		Question question = this.questionMapper.selectQuestion(id);
@@ -65,7 +75,7 @@ public class QuestionController {
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.POST)
 	public ModelAndView modifyQuestion(
-			@PathVariable(value = "id") String id,
+			@PathVariable(value = "id") int id,
 			Question question
 			){
 		//
@@ -78,7 +88,7 @@ public class QuestionController {
 	
 	@RequestMapping(value = "/{id}/delete", method = RequestMethod.POST)
 	public ModelAndView deleteQuestion(
-			@PathVariable(value = "id") String id
+			@PathVariable(value = "id") int id
 			){
 		//
 		questionMapper.deleteQuestion(id);
@@ -91,7 +101,7 @@ public class QuestionController {
 	 */
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ModelAndView showQuestion(
-			@PathVariable("id") String id
+			@PathVariable("id") int id
 			){
 		//
 		Question question = this.questionMapper.selectQuestion(id);

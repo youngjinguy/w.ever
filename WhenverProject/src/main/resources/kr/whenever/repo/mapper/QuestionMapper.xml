@@ -19,8 +19,8 @@
     </resultMap>
 
     <insert id="insertQuestion" parameterType="Question">
-		INSERT INTO W_QUESTION (        	
-        	,QUESTION_SECTION
+		INSERT INTO w_question (        	
+        	QUESTION_SECTION
         	,ANSWER		
         	,QUESTION_CONTENT	
         	,SELECTION_1
@@ -44,7 +44,7 @@
     </insert>
     
     <update id="updateQuestion" parameterType="Question">
-    	UPDATE W_QUESTION
+    	UPDATE w_question
    		SET 
    			QUESTION_ID = #{id}
    			,QUESTION_SECTION = #{section}
@@ -61,7 +61,7 @@
     
     <delete id="deleteQuestion" parameterType="int">
     	DELETE
-		FROM W_QUESTION
+		FROM w_question
 		WHERE QUESTION_ID = #{id}
     </delete>
     
@@ -77,7 +77,7 @@
         	,SELECTION_4
         	,SELECTION_5
         	,QUESTION_KEYWORD
-		  FROM W_QUESTION
+		  FROM w_question
 		  WHERE QUESTION_ID = #{id}
     </select>
 	
@@ -93,7 +93,7 @@
         	,SELECTION_4
         	,SELECTION_5
         	,QUESTION_KEYWORD
-		  FROM W_QUESTION
+		  FROM w_question
 	</select>
     
 </mapper>

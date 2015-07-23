@@ -11,9 +11,9 @@
 	<div class="container">
 		<form class="form-horizontal" action="${ctx}/question" method="post">			
 		  	<div class="form-group">
-			    <label for="questionSection" class="col-sm-2 control-label">과목</label>
+			    <label for="section" class="col-sm-2 control-label">과목</label>
 			    <div class="col-sm-10">
-			      <select name="questionSection" class="form-control" id="questionSection">>
+			      <select name="section" class="form-control" id="questionSection">>
 					  <option value=""> 선택 </option>
 					  <option value="LANGUAGE"> 국어 </option>
 					  <option value="MATH"> 수학 </option>
@@ -23,16 +23,16 @@
 		  	</div>
 			
 			<div class="form-group">
-			    <label for="questionContent" class="col-sm-2 control-label">내용</label>
+			    <label for="content" class="col-sm-2 control-label">내용</label>
 			    <div class="col-sm-10">
-			      <input type="textbox" class="form-control" id="questionContent" placeholder="내용" name="questionContent">
+			      <input type="textbox" class="form-control" id="content" placeholder="내용" name="content">
 			    </div>
 		  	</div>
 			
 			<div class="form-group">
-			    <label for="questionAnswer" class="col-sm-2 control-label">정답</label>
+			    <label for="answer" class="col-sm-2 control-label">정답</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="questionAnswer" placeholder="정답" name="questionAnswer">
+			      <input type="text" class="form-control" id="answer" placeholder="정답" name="answer">
 			    </div>
 		  	</div>
 		  	
@@ -72,9 +72,9 @@
 		  	</div>
 			
 			<div class="form-group">
-			    <label for="questionKeyword" class="col-sm-2 control-label">문제 키워드</label>
+			    <label for="keyword" class="col-sm-2 control-label">문제 키워드</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="questionKeyword" placeholder="문제 키워드" name="questionKeyword">
+			      <input type="text" class="form-control" id="keyword" placeholder="문제 키워드" name="keyword">
 			    </div>
 		  	</div>			
 	

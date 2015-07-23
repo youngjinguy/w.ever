@@ -21,11 +21,11 @@ public class QuestionRepository {
 		this.questionMapper.updateQuestion(question);
 	}
 	
-	public void removeQuestion(String id) {
+	public void removeQuestion(int id) {
 		this.questionMapper.deleteQuestion(id);
 	}
 	
-	public Question findQuestion(String id) {
+	public Question findQuestion(int id) {
 		return this.questionMapper.selectQuestion(id);
 	}
 
