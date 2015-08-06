@@ -38,7 +38,7 @@
 		<form class="form-horizontal" id="modifyForm" action="${ctx}/question/${question.id}" method="POST">
 		
 			<div class="form-group">
-			    <label for="section" class="col-sm-2 control-label">학생유형</label>
+			    <label for="section" class="col-sm-2 control-label">문제유형</label>
 			    <div class="col-sm-10">
 			      <select name="section" class="form-control" id="section">>
 					  <option value=""> 선택 </option>
@@ -60,6 +60,38 @@
 			    <label for="answer" class="col-sm-2 control-label">정답</label>
 			    <div class="col-sm-10">
 			      <input type="text" class="form-control" id="answer" placeholder="정답" name="answer" value="${question.answer}">
+			    </div>
+		  	</div>
+		  	
+		  	<div class="form-group">
+			    <label for="selection1" class="col-sm-2 control-label">보기1</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" id="selection1" placeholder="보기1" name="selection1" value="${question.selection1}">
+			    </div>
+		  	</div>
+		  	
+		  	<div class="form-group">
+			    <label for="selection2" class="col-sm-2 control-label">보기2</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" id="selection2" placeholder="보기2" name="selection2" value="${question.selection2}">
+			    </div>
+		  	</div>
+		  	<div class="form-group">
+			    <label for="selection3" class="col-sm-2 control-label">보기3</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" id="selection3" placeholder="보기3" name="selection3" value="${question.selection3}">
+			    </div>
+		  	</div>
+		  	<div class="form-group">
+			    <label for="selection4" class="col-sm-2 control-label">보기4</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" id="selection4" placeholder="보기4" name="selection4" value="${question.selection4}">
+			    </div>
+		  	</div>
+		  	<div class="form-group">
+			    <label for="selection5" class="col-sm-2 control-label">보기5</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" id="selection5" placeholder="보기5" name="selection5" value="${question.selection5}">
 			    </div>
 		  	</div>
 			

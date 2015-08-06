@@ -7,44 +7,75 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>문제 상세보기</title>
+<meta name="submenu" content="question" />
 </head>
 	<div class="container">
 		<div class="page-header">
         	<h1>문제 보기</h1>
       	</div>
       	
+		<form class="form-horizontal" action="${ctx}/question/${question.id}" method="POST">
 		<div class="form-group">
-		    <label for="section" class="col-sm-2 control-label">학생유형</label>
-		    <div class="col-sm-10">
-		      <select name="section" class="form-control" id="section">>
-				  <option value=""> 선택 </option>
-				  <option value="KOREAN" <c:if test="${question.section eq 'KOREAN'}">selected="selected"</c:if>> 언어 </option>
-			  	  <option value="MATH"<c:if test="${question.section eq 'MATH'}">selected="selected"</c:if>> 수리 </option>
-			  	  <option value="ENGLISH" <c:if test="${question.section eq 'ENGLISH'}">selected="selected"</c:if>> 외국어 </option>
-			  </select>
-		    </div>
-	  	</div>
-	  	
+	    	<label for="id" class="col-md-2 control-label">ID</label>
+	    	<div class="col-md-10">
+	    		<label>${question.id}</label>
+			</div>
+		</div>
 		<div class="form-group">
-		    <label for="content" class="col-sm-2 control-label">문제</label>
-		    <div class="col-sm-10">
-		      <input type="text" class="form-control" id="content" placeholder="문제" name="content" value="${question.content}">
-		    </div>
-	  	</div>
-
+	    	<label for="section" class="col-md-2 control-label">SECTION</label>
+	    	<div class="col-md-10">
+	    		<label>${question.section}</label>
+			</div>
+		</div>
 		<div class="form-group">
-		    <label for="answer" class="col-sm-2 control-label">정답</label>
-		    <div class="col-sm-10">
-		      <input type="text" class="form-control" id="answer" placeholder="정답" name="answer" value="${question.answer}">
-		    </div>
-	  	</div>
+	    	<label for="content" class="col-md-2 control-label">CONTENT</label>
+	    	<div class="col-md-10">
+	    		<label>${question.content}</label>
+			</div>
+		</div>
+		<div class="form-group">
+	    	<label for="answer" class="col-md-2 control-label">ANSWER</label>
+	    	<div class="col-md-10">
+	    		<label>${question.answer}</label>
+			</div>
+		</div>
+		<div class="form-group">
+	    	<label for="selection1" class="col-md-2 control-label">SELECTION1</label>
+	    	<div class="col-md-10">
+	    		<label>${question.selection1}</label>
+			</div>
+		</div>
+		<div class="form-group">
+	    	<label for="selection2" class="col-md-2 control-label">SELECTION2</label>
+	    	<div class="col-md-10">
+	    		<label>${question.selection2}</label>
+			</div>
+		</div>
+		<div class="form-group">
+	    	<label for="selection3" class="col-md-2 control-label">SELECTION3</label>
+	    	<div class="col-md-10">
+	    		<label>${question.selection3}</label>
+			</div>
+		</div>
+		<div class="form-group">
+	    	<label for="selection4" class="col-md-2 control-label">SELECTION4</label>
+	    	<div class="col-md-10">
+	    		<label>${question.selection4}</label>
+			</div>
+		</div>
+		<div class="form-group">
+	    	<label for="selection5" class="col-md-2 control-label">SELECTION5</label>
+	    	<div class="col-md-10">
+	    		<label>${question.selection5}</label>
+			</div>
+		</div>
+		<div class="form-group">
+	    	<label for="keyword" class="col-md-2 control-label">KEYWORD</label>
+	    	<div class="col-md-10">
+	    		<label>${question.keyword}</label>
+			</div>
+		</div>
 		
-	  	<div class="form-group">
-		    <label for="keyword" class="col-sm-2 control-label">문제키워드</label>
-		    <div class="col-sm-10">
-		      <input type="text" class="form-control" id="keyword" placeholder="키워드" name="keyword" value="${question.keyword}">
-		    </div>
-	  	</div>		  				
 				
 		<div class="form-group">
 	   		<div class="col-sm-offset-2 col-sm-10">
