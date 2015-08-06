@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>사용자 상세보기</title>
+<title>뉴스 상세보기</title>
 <meta name="submenu" content="news" />
 </head>
 <body>
@@ -18,8 +18,38 @@
 			</div>
 		</div>
 		<div class="form-group">
+	    	<label for="title" class="col-md-2 control-label">TITLE</label>
+	    	<div class="col-md-10">
+	    		<label>${news.title}</label>
+			</div>
+		</div>
+		<div class="form-group">
+	    	<label for="content" class="col-md-2 control-label">CONTENT</label>
+	    	<div class="col-md-10">
+	    		<label>${news.content}</label>
+			</div>
+		</div>
+		<div class="form-group">
+	    	<label for="date" class="col-md-2 control-label">DATE</label>
+	    	<div class="col-md-10">
+	    		<label>${news.date}</label>
+			</div>
+		</div>
+		<div class="form-group">
+	    	<label for="company" class="col-md-2 control-label">PUBLISHER</label>
+	    	<div class="col-md-10">
+	    		<label>${news.company}</label>
+			</div>
+		</div>
+		<div class="form-group">
+	    	<label for="uid" class="col-md-2 control-label">USER ID</label>
+	    	<div class="col-md-10">
+	    		<label>${news.uid}</label>
+			</div>
+		</div>
+		<div class="form-group">
     		<div class="col-sm-offset-2 col-sm-10">
-    			<a class="btn btn-default" role="button" href="/wever/user/${user.id}/modify">수정</a>
+    			<a class="btn btn-default" role="button" href="/wever/news/${news.id}/modify">수정</a>
     		</div>
   		</div>
 	</form>

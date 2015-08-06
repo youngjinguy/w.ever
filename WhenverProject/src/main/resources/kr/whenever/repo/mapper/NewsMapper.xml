@@ -38,7 +38,6 @@
    			,NEWS_DATE = #{date}
    			,NEWS_COMPANY = #{company}
    			,NEWS_CONTENT = #{content}
-   			,USER_ID = #{uid}
  		WHERE NEWS_ID = #{id};
     </update>
     

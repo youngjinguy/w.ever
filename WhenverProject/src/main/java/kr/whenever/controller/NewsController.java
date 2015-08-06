@@ -73,7 +73,7 @@ public class NewsController {
 		//
 		News news = this.newsMapper.selectNews(id);
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("/user/userModify");
+		mav.setViewName("/news/newsModify");
 		mav.addObject("news", news);
 		return mav;
 	}
