@@ -31,7 +31,7 @@
         	,QUESTION_KEYWORD
         	)
         VALUES (
-        ,#{section}
+        #{section}
         ,#{answer}
         ,#{content}
         ,#{selection1}
