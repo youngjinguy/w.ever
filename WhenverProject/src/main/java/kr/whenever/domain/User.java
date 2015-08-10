@@ -18,6 +18,8 @@ public class User {
 	
 	private String type;
 	
+	private String token;
+	
 	public User() {}
 	
 	/*
@@ -90,6 +92,12 @@ public class User {
 		this.type = type;
 	}
 
+	public String getToken() {
+		return token;
+	}
 
+	public void setToken(String token) {
+		this.token = token;
+	}
 
 }

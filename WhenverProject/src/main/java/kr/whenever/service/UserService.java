@@ -1,6 +1,7 @@
 package kr.whenever.service;
 
 import java.util.List;
+import java.util.Map;
 
 import kr.whenever.domain.User;
 
@@ -15,5 +16,7 @@ public interface UserService {
 	User findUser(String id);
 
 	List<User> findUserList();
+	
+	Map<String, String> identifiedUser(String id, String password);
 
 }

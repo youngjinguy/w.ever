@@ -3,7 +3,6 @@ package kr.whenever.controller;
 import java.util.List;
 
 import kr.whenever.domain.Notice;
-import kr.whenever.domain.User;
 import kr.whenever.repo.mapper.NoticeMapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
