@@ -20,7 +20,7 @@ public class NoticeController {
 	private NoticeMapper noticeMapper;
 
 	@RequestMapping(value = "/notice", method = RequestMethod.GET)
-	public ModelAndView userList() {
+	public ModelAndView noticeList() {
 		List<Notice> notices = this.noticeMapper.selectNoticeList();
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("/notice/noticeList");
@@ -29,12 +29,12 @@ public class NoticeController {
 	}
 
 	@RequestMapping(value = "/regist", method = RequestMethod.GET)
-	public String registUserForm() {
-		return "/notice/userRegist";
+	public String registNoticeForm() {
+		return "/notice/noticeRegist";
 	}
 
 	@RequestMapping(value = "/regist", method = RequestMethod.POST)
-	public ModelAndView registUser
+	public ModelAndView registNotice
 	(@ModelAttribute Notice notice) {
 		this.noticeMapper.insertNotice(notice);
 		ModelAndView mav = new ModelAndView();
@@ -54,12 +54,12 @@ public class NoticeController {
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.POST)
 	public ModelAndView modifyNotice(
-			@PathVariable(value = "id") String id,
+			@PathVariable(value = "id") Long id,
 			@ModelAttribute Notice notice
 			){
 		this.noticeMapper.updateNotice(notice);
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("redirect:/notice");
+		mav.setViewName("redirect:/notice"); 
 		return mav;
 	}
 	
