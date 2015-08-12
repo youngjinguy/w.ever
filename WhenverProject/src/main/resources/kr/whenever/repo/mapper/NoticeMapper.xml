@@ -11,9 +11,9 @@
 		<result property="content" column="notice_content" />
 	</resultMap>
 	<insert id="insertNotice" parameterType="Notice">
-		INSERT INTO notice (
-		notice_title
-		,notice_content
+		INSERT INTO w_notice (
+		NOTICE_TITLE
+		,NOTICE_CONTENT
 		)
 		VALUES (
 		#{title}
@@ -21,33 +21,33 @@
 		)
 	</insert>
 
-	<update id="updateUser" parameterType="User">
-		UPDATE notice
+	<update id="updateNotice" parameterType="Notice">
+		UPDATE w_notice
 		SET
-		notice_title = #{title}
-		,notice_content = #{content}
-		WHERE id = #{id};
+		NOTICE_TITLE = #{title}
+		,NOTICE_CONTENT = #{content}
+		WHERE NOTICE_ID = #{id};
 	</update>
 
-	<delete id="deleteUser" parameterType="Long">
+	<delete id="deleteNotice" parameterType="Long">
 		DELETE
-		FROM notice
+		FROM w_notice
 		WHERE id = #{id}
 	</delete>
 
-	<select id="selectNotice" resultMap="noticeReultMap">
+	<select id="selectNotice" resultMap="noticeResultMap">
 		select
-		id,
-		notice_title,
-		notice_content
-		from notice
+		NOTICE_ID,
+		NOTICE_TITLE,
+		NOTICE_CONTENT
+		from w_notice
 	</select>
-	<select id="selectNoticeList" resultMap="noticeReultMap">
+	<select id="selectNoticeList" resultMap="noticeResultMap">
 		SELECT
-		id
-		,notice_title
-		,notice_content
-		from notice
+		NOTICE_ID
+		,NOTICE_TITLE
+		,NOTICE_CONTENT
+		from w_notice
 	</select>
 
 
