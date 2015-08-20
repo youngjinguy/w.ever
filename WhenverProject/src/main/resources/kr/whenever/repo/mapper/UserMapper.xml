@@ -17,7 +17,7 @@
     </resultMap>
 
     <insert id="insertUser" parameterType="User">
-		INSERT INTO w_user (
+		INSERT INTO W_USER (
         	USER_ID
         	,PASSWORD
         	,NICKNAME
@@ -40,7 +40,7 @@
     </insert>
     
     <update id="updateUser" parameterType="User">
-    	UPDATE w_user
+    	UPDATE W_USER
    		SET 
    			PASSWORD = #{password}
    			,NICKNAME = #{nickname}
@@ -53,7 +53,7 @@
     
     <delete id="deleteUser" parameterType="String">
     	DELETE
-		FROM w_user
+		FROM W_USER
 		WHERE USER_ID = #{id}
     </delete>
     
@@ -67,7 +67,7 @@
         	,BIRTH_DATE
         	,USER_SCHOOL
         	,USER_TYPE
-		  FROM w_user
+		  FROM W_USER
 		  WHERE USER_ID = #{id}
     </select>
 	
@@ -78,7 +78,7 @@
 			,USER_PHONE
 			,BIRTH_DATE
 			,USER_TYPE
-		  FROM w_user
+		  FROM W_USER
 	</select>
     
 </mapper>
