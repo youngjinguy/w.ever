@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="${ctx}/resources/css/bootstrap-theme.min.css">
 <script src="${ctx}/resources/js/jquery-1.11.2.min.js"></script>
 <script src="${ctx}/resources/js/bootstrap.min.js"></script>
-<title>Notice</title>
+<title>공지사항</title>
 </head>
 <body>
 	<div class="container">

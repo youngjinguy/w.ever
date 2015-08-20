@@ -5,6 +5,7 @@ public class Notice {
 	private Long id;
 	private String title;
 	private String content;
+		
 	public Long getId() {
 		return id;
 	}

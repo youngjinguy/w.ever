@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="${ctx}/resources/css/bootstrap-theme.min.css">
 <script src="${ctx}/resources/js/jquery-1.11.2.min.js"></script>
 <script src="${ctx}/resources/js/bootstrap.min.js"></script>
-<title>사용자 등록</title>
+<title>공지사항 등록</title>
 </head>
 
 <body>
