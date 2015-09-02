@@ -39,7 +39,7 @@ public class NoticeController {
 	(@ModelAttribute Notice notice) {
 		this.noticeMapper.insertNotice(notice);
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("redirect:/notice");
+		mav.setViewName("redirect:/notice/list");
 		return mav;
 	}
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -60,7 +60,7 @@ public class NoticeController {
 			){
 		this.noticeMapper.updateNotice(notice);
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("redirect:/notice"); 
+		mav.setViewName("redirect:/notice/list"); 
 		return mav;
 	}
 	

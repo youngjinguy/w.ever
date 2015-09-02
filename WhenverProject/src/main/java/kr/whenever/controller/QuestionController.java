@@ -56,7 +56,7 @@ public class QuestionController {
 		//
 		this.questionMapper.insertQuestion(question);
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("redirect:/question");
+		mav.setViewName("redirect:/question/list");
 		return mav;
 	}
 	
@@ -82,7 +82,7 @@ public class QuestionController {
 		question.setId(id);		
 		this.questionMapper.updateQuestion(question);		
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("redirect:/question");
+		mav.setViewName("redirect:/question/list");
 		return mav;
 	}
 	
@@ -92,7 +92,7 @@ public class QuestionController {
 			){
 		//
 		questionMapper.deleteQuestion(id);
-		return new ModelAndView("redirect:/question");
+		return new ModelAndView("redirect:/question/list");
 	}
 	
 	/**
