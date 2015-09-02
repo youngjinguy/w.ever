@@ -37,7 +37,7 @@ public class QuestionController {
 	public ModelAndView registerQuestionForm(){
 		//
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("/question/questionRegister");
+		mav.setViewName("/question/questionRegist");
 		return mav;
 	}
 	

@@ -29,12 +29,12 @@ public class NoticeController {
 		return mav;
 	}
 
-	@RequestMapping(value = "/regist", method = RequestMethod.GET)
+	@RequestMapping(value = "/new", method = RequestMethod.GET)
 	public String registNoticeForm() {
 		return "/notice/noticeRegist";
 	}
 
-	@RequestMapping(value = "/regist", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public ModelAndView registNotice
 	(@ModelAttribute Notice notice) {
 		this.noticeMapper.insertNotice(notice);

@@ -22,13 +22,13 @@
 		</tr>	
 		<c:forEach var="notice" items="${notieces}">
 			<tr>
-				<td><a href="${ctx}/user/${notice.id}">${notice.id}</a></td>
-				<td>${notice.title}</td>
+				<td>${notice.id}</td>
+				<td><a href="${ctx}/notice/${notice.id}">${notice.title}</a></td>
 				<td>${notice.content}</td>
 			</tr>
 		</c:forEach>
 	</table>
-	<a class="btn btn-default" role="button" href="${ctx}/notice/regist">등록</a>
+	<a class="btn btn-default" role="button" href="${ctx}/notice/new">등록</a>
 	</div>
 </body>
 </html>

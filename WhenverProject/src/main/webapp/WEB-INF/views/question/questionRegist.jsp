@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="container">
-		<form class="form-horizontal" action="${ctx}/question" method="post">			
+		<form class="form-horizontal" action="${ctx}/question/" method="post">			
 		  	<div class="form-group">
 			    <label for="section" class="col-sm-2 control-label">과목</label>
 			    <div class="col-sm-10">
