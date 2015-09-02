@@ -14,12 +14,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequestMapping(value="/notice")
 public class NoticeController {
 
 	@Autowired
 	private NoticeMapper noticeMapper;
 
-	@RequestMapping(value = "/notice", method = RequestMethod.GET)
+	@RequestMapping(value="/list",  method = RequestMethod.GET)
 	public ModelAndView noticeList() {
 		List<Notice> notices = this.noticeMapper.selectNoticeList();
 		ModelAndView mav = new ModelAndView();

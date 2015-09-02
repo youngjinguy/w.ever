@@ -19,7 +19,7 @@ public class QuestionController {
 	@Autowired
 	private QuestionMapper questionMapper;
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value="/list", method = RequestMethod.GET)
 	public ModelAndView questionList(){
 		//
 		List<Question> questions = this.questionMapper.selectQuestions();

@@ -25,28 +25,28 @@
               <li class="dropdown <c:if test="${submenu eq 'user'}">active</c:if>">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">사용자<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                  <li><a href="${ctx}/user">사용자목록</a></li>
+                  <li><a href="${ctx}/user/list">사용자목록</a></li>
                   <li><a href="${ctx}/user/new">사용자등록</a></li>
                 </ul>
               </li>
               <li class="dropdown <c:if test="${submenu eq 'question'}">active</c:if>">
                 <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">문제<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                  <li><a href="${ctx}/question">문제목록</a></li>
+                  <li><a href="${ctx}/question/list">문제목록</a></li>
                   <li><a href="${ctx}/question/new">문제등록</a></li>
                 </ul>
               </li>
               <li class="dropdown <c:if test="${submenu eq 'notice'}">active</c:if>">
                 <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">공지사항<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                  <li><a href="${ctx}/notice">공지사항목록</a></li>
+                  <li><a href="${ctx}/notice/list">공지사항목록</a></li>
                   <li><a href="${ctx}/notice/new">공지사항등록</a></li>
                 </ul>
               </li>
               <li class="dropdown <c:if test="${submenu eq 'news'}">active</c:if>">
                 <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">뉴스<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                  <li><a href="${ctx}/news">뉴스목록</a></li>
+                  <li><a href="${ctx}/news/list">뉴스목록</a></li>
                   <li><a href="${ctx}/news/new">뉴스등록</a></li>
                 </ul>
               </li>

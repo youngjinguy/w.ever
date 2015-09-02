@@ -23,7 +23,7 @@ public class NewsController {
 	 * 뉴스 목록
 	 * @return
 	 */
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value="/list", method = RequestMethod.GET)
 	public ModelAndView newsList(){
 		//
 		List<News> news = this.newsMapper.selectNewsList();

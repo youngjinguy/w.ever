@@ -23,7 +23,7 @@ public class UserController {
 	 * 사용자 목록
 	 * @return
 	 */
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value="/list", method = RequestMethod.GET)
 	public ModelAndView userList(){
 		//
 		List<User> users = this.userMapper.selectUserList();
