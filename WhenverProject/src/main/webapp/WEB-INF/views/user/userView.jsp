@@ -61,7 +61,7 @@
 		</div>
 		<div class="form-group">
     		<div class="col-sm-offset-2 col-sm-10">
-    			<a class="btn btn-default" role="button" href="/wever/user/${user.id}/modify">수정</a>
+    			<a class="btn btn-default" role="button" href="${ctx}/user/${user.id}/modify">수정</a>
     		</div>
   		</div>
 	</form>
