@@ -14,12 +14,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequestMapping(value="/notice")
 public class NoticeController {
 
 	@Autowired
 	private NoticeMapper noticeMapper;
 
-	@RequestMapping(value = "/notice", method = RequestMethod.GET)
+	@RequestMapping(value="/list",  method = RequestMethod.GET)
 	public ModelAndView noticeList() {
 		List<Notice> notices = this.noticeMapper.selectNoticeList();
 		ModelAndView mav = new ModelAndView();
@@ -28,17 +29,17 @@ public class NoticeController {
 		return mav;
 	}
 
-	@RequestMapping(value = "/regist", method = RequestMethod.GET)
+	@RequestMapping(value = "/new", method = RequestMethod.GET)
 	public String registNoticeForm() {
 		return "/notice/noticeRegist";
 	}
 
-	@RequestMapping(value = "/regist", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public ModelAndView registNotice
 	(@ModelAttribute Notice notice) {
 		this.noticeMapper.insertNotice(notice);
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("redirect:/notice");
+		mav.setViewName("redirect:/notice/list");
 		return mav;
 	}
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -59,7 +60,7 @@ public class NoticeController {
 			){
 		this.noticeMapper.updateNotice(notice);
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("redirect:/notice"); 
+		mav.setViewName("redirect:/notice/list"); 
 		return mav;
 	}
 	

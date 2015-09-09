@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="container">
-		<form class="form-horizontal" action="${ctx}/user" method="post">
+		<form class="form-horizontal" action="${ctx}/user/" method="post">
 			<div class="form-group">
 		    	<label for="id" class="col-md-2 control-label">ID</label>
 		    	<div class="col-md-10">

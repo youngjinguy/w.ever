@@ -38,7 +38,7 @@
 		<div class="form-group">
 	    	<label for="cellPhoneNo2" class="col-md-2 control-label">상대방전화번호</label>
 	    	<div class="col-md-10">
-	    		<label>${user.cellPhoneNo1}</label>
+	    		<label>${user.cellPhoneNo2}</label>
 			</div>
 		</div>
 		<div class="form-group">
@@ -61,7 +61,7 @@
 		</div>
 		<div class="form-group">
     		<div class="col-sm-offset-2 col-sm-10">
-    			<a class="btn btn-default" role="button" href="/wever/user/${user.id}/modify">수정</a>
+    			<a class="btn btn-default" role="button" href="${ctx}/user/${user.id}/modify">수정</a>
     		</div>
   		</div>
 	</form>

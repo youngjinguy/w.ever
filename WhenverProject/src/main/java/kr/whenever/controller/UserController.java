@@ -23,7 +23,7 @@ public class UserController {
 	 * 사용자 목록
 	 * @return
 	 */
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value="/list", method = RequestMethod.GET)
 	public ModelAndView userList(){
 		//
 		List<User> users = this.userMapper.selectUserList();
@@ -57,7 +57,7 @@ public class UserController {
 		//
 		this.userMapper.insertUser(user);
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("redirect:/user");
+		mav.setViewName("redirect:/user/list");
 		return mav;
 	}
 	
@@ -92,7 +92,7 @@ public class UserController {
 		//
 		this.userMapper.updateUser(user);
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("redirect:/user");
+		mav.setViewName("redirect:/user/list");
 		return mav;
 	}
 	
@@ -108,7 +108,7 @@ public class UserController {
 		//
 		this.userMapper.deleteUser(id);
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("redirect:/user");
+		mav.setViewName("redirect:/user/list");
 		return mav ;
 	}
 	

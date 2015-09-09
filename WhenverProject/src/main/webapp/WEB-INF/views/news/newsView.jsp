@@ -49,7 +49,7 @@
 		</div>
 		<div class="form-group">
     		<div class="col-sm-offset-2 col-sm-10">
-    			<a class="btn btn-default" role="button" href="/wever/news/${news.id}/modify">수정</a>
+    			<a class="btn btn-default" role="button" href="${ctx}/news/${news.id}/modify">수정</a>
     		</div>
   		</div>
 	</form>

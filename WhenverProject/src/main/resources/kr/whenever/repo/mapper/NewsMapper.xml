@@ -15,7 +15,7 @@
     </resultMap>
 
     <insert id="insertNews" parameterType="News">
-		INSERT INTO w_news (
+		INSERT INTO W_NEWS (
         	NEWS_TITLE
         	,NEWS_DATE
         	,NEWS_COMPANY
@@ -32,7 +32,7 @@
     </insert>
     
     <update id="updateNews" parameterType="News">
-    	UPDATE w_news
+    	UPDATE W_NEWS
    		SET 
    			NEWS_TITLE = #{title}
    			,NEWS_DATE = #{date}
@@ -43,7 +43,7 @@
     
     <delete id="deleteNews" parameterType="int">
     	DELETE
-		FROM w_news
+		FROM W_NEWS
 		WHERE NEWS_ID = #{id}
     </delete>
     
@@ -55,7 +55,7 @@
         	,NEWS_COMPANY
         	,NEWS_CONTENT
         	,USER_ID
-		  FROM w_news
+		  FROM W_NEWS
 		  WHERE NEWS_ID = #{id}
     </select>
 	
@@ -66,7 +66,7 @@
         	,NEWS_DATE
         	,NEWS_COMPANY
         	,USER_ID
-		  FROM w_news
+		  FROM W_NEWS
 	</select>
     
 </mapper>

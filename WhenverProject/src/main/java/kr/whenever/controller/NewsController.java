@@ -23,7 +23,7 @@ public class NewsController {
 	 * 뉴스 목록
 	 * @return
 	 */
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value="/list", method = RequestMethod.GET)
 	public ModelAndView newsList(){
 		//
 		List<News> news = this.newsMapper.selectNewsList();
@@ -57,7 +57,7 @@ public class NewsController {
 		//
 		this.newsMapper.insertNews(news);
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("redirect:/news");
+		mav.setViewName("redirect:/news/list");
 		return mav;
 	}
 	
@@ -92,7 +92,7 @@ public class NewsController {
 		//
 		this.newsMapper.updateNews(news);
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("redirect:/news");
+		mav.setViewName("redirect:/news/list");
 		return mav;
 	}
 	
@@ -108,7 +108,7 @@ public class NewsController {
 		//
 		this.newsMapper.deleteNews(id);
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("redirect:/news");
+		mav.setViewName("redirect:/news/list");
 		return mav ;
 	}
 	

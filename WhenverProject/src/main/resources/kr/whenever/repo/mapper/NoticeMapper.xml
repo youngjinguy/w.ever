@@ -10,7 +10,7 @@
 		<result property="content" column="NOTICE_CONTENT" />
 	</resultMap>
 	<insert id="insertNotice" parameterType="Notice">
-		INSERT INTO w_notice (
+		INSERT INTO W_NOTICE (
 		NOTICE_TITLE
 		,NOTICE_CONTENT
 		)
@@ -21,7 +21,7 @@
 	</insert>
 
 	<update id="updateNotice" parameterType="Notice">
-		UPDATE w_notice
+		UPDATE W_NOTICE
 		SET
 		NOTICE_TITLE = #{title}
 		,NOTICE_CONTENT = #{content}
@@ -30,7 +30,7 @@
 
 	<delete id="deleteNotice" parameterType="Long">
 		DELETE
-		FROM w_notice
+		FROM W_NOTICE
 		WHERE id = #{id}
 	</delete>
 
@@ -39,14 +39,14 @@
 		NOTICE_ID,
 		NOTICE_TITLE,
 		NOTICE_CONTENT
-		from w_notice
+		from W_NOTICE
 	</select>
 	<select id="selectNoticeList" resultMap="noticeResultMap">
 		SELECT
 		NOTICE_ID
 		,NOTICE_TITLE
 		,NOTICE_CONTENT
-		from w_notice
+		from W_NOTICE
 	</select>
 
 

@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="container">
-		<form class="form-horizontal" action="${ctx}/news" method="post">
+		<form class="form-horizontal" action="${ctx}/news/" method="post">
 			
 			<div class="form-group">
 		    	<label for="title" class="col-md-2 control-label">TITLE</label>

@@ -15,7 +15,7 @@
 <body>
 
 	<div class="container">
-	<form class="form-horizontal" action="${ctx}/notice/regist" method="post">
+	<form class="form-horizontal" action="${ctx}/notice/" method="post">
 		<div class="form-group">
 	    	<label for="title" class="col-md-2 control-label">제목</label>
 	    	<div class="col-md-10">
@@ -30,7 +30,7 @@
 		</div>
 		<div class="form-group">
     	<div class="col-sm-offset-2 col-sm-10">
-      		<button type="submit" class="btn btn-default">수정</button>
+      		<button type="submit" class="btn btn-default">등록</button>
     		</div>
   		</div>
 	</form>
