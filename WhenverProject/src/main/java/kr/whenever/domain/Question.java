@@ -1,7 +1,6 @@
 package kr.whenever.domain;
 
 public class Question {
-	//
 	/** 문제ID */
 	private int id;
 
