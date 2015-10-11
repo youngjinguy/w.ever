@@ -28,7 +28,11 @@ public class WrongRepository {
 		return this.wrongMapper.selectWrong(uid,qid);
 	}
 
-	public List<Wrong> findWrongs() {
-		return this.wrongMapper.selectWrongs();
+	public List<Wrong> findWrongs(String uid) {
+		return this.wrongMapper.selectWrongs(uid);
+	}
+	
+	public List<Wrong> findAll() {
+		return this.wrongMapper.selectAll();
 	}
 }

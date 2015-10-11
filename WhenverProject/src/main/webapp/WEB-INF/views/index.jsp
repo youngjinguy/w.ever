@@ -13,6 +13,7 @@
 		<li><a href="question/list">질문</a></li>
 		<li><a href="notice/list">공지사항</a></li>
 		<li><a href="news/list">뉴스</a></li>
+		<li><a href="wrong/list">오답노트</a></li>
 	</ul>
 
 </body>

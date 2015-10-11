@@ -13,11 +13,11 @@ public class Wrong {
 		this.qid = qid;
 	}
 
-	public String getuid() {
+	public String getUid() {
 		return uid;
 	}
 
-	public void setuid(String uid) {
+	public void setUid(String uid) {
 		this.uid = uid;
 	}
 }

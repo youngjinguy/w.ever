@@ -13,7 +13,9 @@ public interface WrongMapper {
 	
 	void deleteWrong(@Param("uid") String uid, @Param("qid") String qid);
 	
-	Wrong selectWrong(@Param("uid") String uid);
+	Wrong selectWrong(@Param("uid") String uid, @Param("qid") String qid);
 
-	List<Wrong> selectWrongs();
+	List<Wrong> selectWrongs(@Param("uid") String uid);
+	
+	List<Wrong> selectAll();
 }

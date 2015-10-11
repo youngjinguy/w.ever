@@ -9,6 +9,7 @@
 <title>문제 상세보기</title>
 <meta name="submenu" content="question" />
 </head>
+<body>
 	<div class="container">
 		<div class="page-header">
         	<h1>문제 보기</h1>
@@ -82,6 +83,7 @@
 	   			<a class="btn btn-default" role="button" href="${ctx}/question/${question.id}/modify">수정</a>
 	   		</div>
   		</div>
+  		</form>
 	</div>
 </body>
 </html>
