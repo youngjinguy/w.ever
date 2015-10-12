@@ -79,9 +79,9 @@
 		  	</div>			
 	
 	
-	<input type="submit" value="등록" class="btn btn-default btn-primary"/>
-	<input type="reset" value="취소" class="btn btn-default"/>
-	</form>
-</div>
+		<input type="submit" value="등록" class="btn btn-default btn-primary"/>
+		<input type="reset" value="취소" class="btn btn-default"/>
+		</form>
+	</div>
 </body>
 </html>

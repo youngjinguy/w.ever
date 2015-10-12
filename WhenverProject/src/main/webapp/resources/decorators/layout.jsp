@@ -50,6 +50,13 @@
                   <li><a href="${ctx}/news/new">뉴스등록</a></li>
                 </ul>
               </li>
+              <li class="dropdown <c:if test="${submenu eq 'wrong'}">active</c:if>">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">오답노트<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="${ctx}/wrong/list">오답노트목록</a></li>
+                  <li><a href="${ctx}/wrong/new">오답노트등록</a></li>
+                </ul>
+              </li>
             </ul>
           </div>
         </div>
