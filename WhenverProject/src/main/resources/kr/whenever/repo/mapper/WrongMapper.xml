@@ -6,13 +6,13 @@
 <mapper namespace="kr.whenever.repo.mapper.WrongMapper">
 	<resultMap id ="wrongResultMap" type="Wrong" >
 		<id		property ="uid" column="USER_ID" />
-		<id 	property ="qid" column="QUESTION_ID" />
+		<id 	property ="qid" column="QUIZ_ID" />
 	</resultMap>
 	
 	<insert id="insertWrong" parameterType="Wrong">
 		INSERT INTO W_WRONG_NOTE (
 			USER_ID
-			,QUESTION_ID
+			,QUIZ_ID
 			)
 		VALUES (
 			#{uid}
@@ -24,28 +24,28 @@
 		UPDATE W_WRONG_NOTE 
 		SET
 			USER_ID = #{uid}
-			,QUESTION_ID = #{qid}
+			,QUIZ_ID = #{qid}
 		WHERE USER_ID = #{uid};
 	</update>
 	
 	<delete id="deleteWrong" parameterType="String">
 		DELETE 
 		FROM W_WRONG_NOTE
-		WHERE USER_ID = #{uid} AND QUESTION_ID = #{qid}
+		WHERE USER_ID = #{uid} AND QUIZ_ID = #{qid}
 	</delete>
 	
 	<select id="selectWrong" parameterType="String" resultMap="wrongResultMap">
 		SELECT 
 			USER_ID
-			,QUESTION_ID
+			,QUIZ_ID
 		FROM W_WRONG_NOTE
-		WHERE USER_ID = #{uid} AND QUESTION_ID = #{qid}
+		WHERE USER_ID = #{uid} AND QUIZ_ID = #{qid}
 	</select>
 	
 	<select id="selectWrongs" resultMap="wrongResultMap">
 		SELECT
 			USER_ID
-			,QUESTION_ID
+			,QUIZ_ID
 		FROM W_WRONG_NOTE
 		WHERE USER_ID = #{uid}
 	</select>
@@ -53,7 +53,7 @@
 	<select id="selectAll" resultMap="wrongResultMap">
 		SELECT
 			USER_ID
-			,QUESTION_ID
+			,QUIZ_ID
 		FROM W_WRONG_NOTE
 	</select>
 	

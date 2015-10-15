@@ -6,29 +6,29 @@
    
 <mapper namespace="kr.whenever.repo.mapper.QuestionMapper">
     <resultMap id="questionResultMap" type="Question" >
-        <id     	property="id"        	column="QUESTION_ID"/>
-        <result 	property="section"		column="QUESTION_SECTION"/>
+        <id     	property="id"        	column="QUIZ_ID"/>
+        <result 	property="section"		column="QUIZ_SECTION"/>
         <result 	property="answer"  		column="ANSWER"/>
-        <result 	property="content"  	column="QUESTION_CONTENT"/>
+        <result 	property="content"  	column="QUIZ_CONTENT"/>
         <result 	property="selection1"	column="SELECTION_1"/>
         <result 	property="selection2"	column="SELECTION_2"/>
         <result 	property="selection3"	column="SELECTION_3"/>
         <result 	property="selection4"	column="SELECTION_4"/>
         <result 	property="selection5"	column="SELECTION_5"/>
-        <result 	property="keyword"  	column="QUESTION_KEYWORD"/>
+        <result 	property="keyword"  	column="QUIZ_KEYWORD"/>
     </resultMap>
 
     <insert id="insertQuestion" parameterType="Question">
-		INSERT INTO W_QUESTION (        	
-        	QUESTION_SECTION
+		INSERT INTO W_QUIZ (        	
+        	QUIZ_SECTION
         	,ANSWER		
-        	,QUESTION_CONTENT	
+        	,QUIZ_CONTENT	
         	,SELECTION_1
         	,SELECTION_2
         	,SELECTION_3
         	,SELECTION_4
         	,SELECTION_5
-        	,QUESTION_KEYWORD
+        	,QUIZ_KEYWORD
         	)
         VALUES (
         #{section}
@@ -44,56 +44,56 @@
     </insert>
     
     <update id="updateQuestion" parameterType="Question">
-    	UPDATE W_QUESTION
+    	UPDATE W_QUIZ
    		SET 
-   			QUESTION_ID = #{id}
-   			,QUESTION_SECTION = #{section}
+   			QUIZ_ID = #{id}
+   			,QUIZ_SECTION = #{section}
    			,ANSWER = #{answer}
-   			,QUESTION_CONTENT = #{content}
+   			,QUIZ_CONTENT = #{content}
    			,SELECTION_1 = #{selection1}
    			,SELECTION_2 = #{selection2}
    			,SELECTION_3 = #{selection3}
    			,SELECTION_4 = #{selection4}
    			,SELECTION_5 = #{selection5}
-   			,QUESTION_KEYWORD = #{keyword}
+   			,QUIZ_KEYWORD = #{keyword}
  		WHERE id = #{id};
     </update>
     
     <delete id="deleteQuestion" parameterType="int">
     	DELETE
-		FROM W_QUESTION
-		WHERE QUESTION_ID = #{id}
+		FROM W_QUIZ
+		WHERE QUIZ_ID = #{id}
     </delete>
     
     <select id="selectQuestion" parameterType="int" resultMap="questionResultMap">
 		SELECT 
-        	QUESTION_ID
-        	,QUESTION_SECTION
+        	QUIZ_ID
+        	,QUIZ_SECTION
         	,ANSWER		
-        	,QUESTION_CONTENT	
+        	,QUIZ_CONTENT	
         	,SELECTION_1
         	,SELECTION_2
         	,SELECTION_3
         	,SELECTION_4
         	,SELECTION_5
-        	,QUESTION_KEYWORD
-		  FROM W_QUESTION
-		  WHERE QUESTION_ID = #{id}
+        	,QUIZ_KEYWORD
+		  FROM W_QUIZ
+		  WHERE QUIZ_ID = #{id}
     </select>
 	
 	<select id="selectQuestions" resultMap="questionResultMap">
 		SELECT 
-        	QUESTION_ID
-        	,QUESTION_SECTION
+        	QUIZ_ID
+        	,QUIZ_SECTION
         	,ANSWER
-        	,QUESTION_CONTENT
+        	,QUIZ_CONTENT
         	,SELECTION_1
         	,SELECTION_2
         	,SELECTION_3
         	,SELECTION_4
         	,SELECTION_5
-        	,QUESTION_KEYWORD
-		  FROM W_QUESTION
+        	,QUIZ_KEYWORD
+		  FROM W_QUIZ
 	</select>
     
 </mapper>

@@ -9,9 +9,7 @@ public class User {
 	private String nickname;
 	
 	private String cellPhoneNo1;
-	
-	private String cellPhoneNo2;
-	
+		
 	private String birthDate;
 	
 	private String school;
@@ -59,15 +57,7 @@ public class User {
 	public void setCellPhoneNo1(String cellPhoneNo1) {
 		this.cellPhoneNo1 = cellPhoneNo1;
 	}
-
-	public String getCellPhoneNo2() {
-		return cellPhoneNo2;
-	}
-
-	public void setCellPhoneNo2(String cellPhoneNo2) {
-		this.cellPhoneNo2 = cellPhoneNo2;
-	}
-
+	
 	public String getBirthDate() {
 		return birthDate;
 	}
@@ -99,5 +89,4 @@ public class User {
 	public void setToken(String token) {
 		this.token = token;
 	}
-
 }

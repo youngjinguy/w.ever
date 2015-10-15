@@ -22,7 +22,7 @@
 			</tr>
 			</c:forEach>		
 		</table>
-		<a class="btn btn-default" role="button" href="${ctx}/wrong/regist">등록</a>
+		<a class="btn btn-default" role="button" href="${ctx}/wrong/new">등록</a>
 	</div>
 </body>
 </html>
