@@ -2,6 +2,7 @@
 <decorators defaultdir="/resources/decorators">
     <excludes>
         <pattern>/index.do</pattern>
+        <pattern>/login</pattern>
     </excludes>   
  
     <decorator name="layout" page="layout.jsp">

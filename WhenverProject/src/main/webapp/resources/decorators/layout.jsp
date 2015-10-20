@@ -57,6 +57,9 @@
                   <li><a href="${ctx}/wrong/new">오답노트등록</a></li>
                 </ul>
               </li>
+              <li>
+              	<a href="<c:url value="/logout" />" > Logout</a>
+              </li>
             </ul>
           </div>
         </div>
