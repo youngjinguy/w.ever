@@ -19,9 +19,9 @@
 		  	</div>
 		  	
 		  	<div class="form-group">
-			    <label for="qid" class="col-sm-2 control-label">QUESTION_ID</label>
+			    <label for="qid" class="col-sm-2 control-label">QUIZ_ID</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="qid" placeholder="QUESTION_ID" name="qid">
+			      <input type="text" class="form-control" id="qid" placeholder="QUIZ_ID" name="qid">
 			    </div>
 		  	</div>	
 	

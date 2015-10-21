@@ -13,7 +13,7 @@
 		<table class="talbe table-bordered">
 			<tr>
 				<td>USER_ID</td>
-				<td>QUESTION_ID</td>
+				<td>QUIZ_ID</td>
 			</tr>
 			<c:forEach var="wrong" items="${wrongs}">
 			<tr>

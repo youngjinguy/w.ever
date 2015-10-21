@@ -4,8 +4,8 @@
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
    
    
-<mapper namespace="kr.whenever.repo.mapper.QuestionMapper">
-    <resultMap id="questionResultMap" type="Question" >
+<mapper namespace="kr.whenever.repo.mapper.QuizMapper">
+    <resultMap id="quizResultMap" type="Quiz" >
         <id     	property="id"        	column="QUIZ_ID"/>
         <result 	property="section"		column="QUIZ_SECTION"/>
         <result 	property="answer"  		column="ANSWER"/>
@@ -18,7 +18,7 @@
         <result 	property="keyword"  	column="QUIZ_KEYWORD"/>
     </resultMap>
 
-    <insert id="insertQuestion" parameterType="Question">
+    <insert id="insertQuiz" parameterType="Quiz">
 		INSERT INTO W_QUIZ (        	
         	QUIZ_SECTION
         	,ANSWER		
@@ -43,7 +43,7 @@
         )
     </insert>
     
-    <update id="updateQuestion" parameterType="Question">
+    <update id="updateQuiz" parameterType="Quiz">
     	UPDATE W_QUIZ
    		SET 
    			QUIZ_ID = #{id}
@@ -59,13 +59,13 @@
  		WHERE id = #{id};
     </update>
     
-    <delete id="deleteQuestion" parameterType="int">
+    <delete id="deleteQuiz" parameterType="int">
     	DELETE
 		FROM W_QUIZ
 		WHERE QUIZ_ID = #{id}
     </delete>
     
-    <select id="selectQuestion" parameterType="int" resultMap="questionResultMap">
+    <select id="selectQuiz" parameterType="int" resultMap="quizResultMap">
 		SELECT 
         	QUIZ_ID
         	,QUIZ_SECTION
@@ -81,7 +81,7 @@
 		  WHERE QUIZ_ID = #{id}
     </select>
 	
-	<select id="selectQuestions" resultMap="questionResultMap">
+	<select id="selectQuizs" resultMap="quizResultMap">
 		SELECT 
         	QUIZ_ID
         	,QUIZ_SECTION

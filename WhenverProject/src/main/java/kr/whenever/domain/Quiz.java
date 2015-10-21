@@ -1,6 +1,6 @@
 package kr.whenever.domain;
 
-public class Question {
+public class Quiz {
 	/** 문제ID */
 	private int id;
 
@@ -32,11 +32,11 @@ public class Question {
 	private String keyword;
 	
 	
-	public Question() {
+	public Quiz() {
 		//
 	}
 	
-	public Question(int id, String section, String answer, String content){
+	public Quiz(int id, String section, String answer, String content){
 		//
 		this.id = id;
 		this.section = section;

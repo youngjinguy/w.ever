@@ -2,8 +2,8 @@ package kr.whenever.controller;
 
 import java.util.List;
 
-import kr.whenever.domain.Question;
-import kr.whenever.repo.mapper.QuestionMapper;
+import kr.whenever.domain.Quiz;
+import kr.whenever.repo.mapper.QuizMapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,19 +13,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping(value = "/question")
-public class QuestionController {
+@RequestMapping(value = "/quiz")
+public class QuizController {
 
 	@Autowired
-	private QuestionMapper questionMapper;
+	private QuizMapper quizMapper;
 
 	@RequestMapping(value="/list", method = RequestMethod.GET)
-	public ModelAndView questionList(){
+	public ModelAndView quizList(){
 		//
-		List<Question> questions = this.questionMapper.selectQuestions();
+		List<Quiz> quizs = this.quizMapper.selectQuizs();
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("/question/questionList");
-		mav.addObject("questions", questions);
+		mav.setViewName("/quiz/quizList");
+		mav.addObject("quizs", quizs);
 		return mav;
 	}
 	
@@ -34,65 +34,65 @@ public class QuestionController {
 	 * @return
 	 */
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
-	public ModelAndView registerQuestionForm(){
+	public ModelAndView registerForm(){
 		//
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("/question/questionRegist");
+		mav.setViewName("/quiz/quizRegist");
 		return mav;
 	}
 	
 	/**
 	 * 문제 등록
-	 * @param question
+	 * @param quiz
 	 * @return
 	 */
 	@RequestMapping(method = RequestMethod.POST)
-	public ModelAndView registerQuestion(
-			Question question
+	public ModelAndView register(
+			Quiz quiz
 			/*@RequestParam("title") String title,
 			@RequestParam("contents") String contents,
 			@RequestParam("type") String type*/
 			){
 		//
-		this.questionMapper.insertQuestion(question);
+		this.quizMapper.insertQuiz(quiz);
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("redirect:/question/list");
+		mav.setViewName("redirect:/quiz/list");
 		return mav;
 	}
 	
 	
 	@RequestMapping(value = "/{id}/modify", method = RequestMethod.GET)
-	public ModelAndView modifyQuestionForm(
+	public ModelAndView modifyForm(
 			@PathVariable(value = "id") int id
 			){
 		//
-		Question question = this.questionMapper.selectQuestion(id);
+		Quiz quiz = this.quizMapper.selectQuiz(id);
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("/question/questionModify");
-		mav.addObject("question", question);
+		mav.setViewName("/quiz/quizModify");
+		mav.addObject("quiz", quiz);
 		return mav;
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.POST)
-	public ModelAndView modifyQuestion(
+	public ModelAndView modify(
 			@PathVariable(value = "id") int id,
-			Question question
+			Quiz quiz
 			){
 		//
-		question.setId(id);		
-		this.questionMapper.updateQuestion(question);		
+		quiz.setId(id);		
+		this.quizMapper.updateQuiz(quiz);		
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("redirect:/question/list");
+		mav.setViewName("redirect:/quiz/list");
 		return mav;
 	}
 	
 	@RequestMapping(value = "/{id}/delete", method = RequestMethod.POST)
-	public ModelAndView deleteQuestion(
+	public ModelAndView delete(
 			@PathVariable(value = "id") int id
 			){
 		//
-		questionMapper.deleteQuestion(id);
-		return new ModelAndView("redirect:/question/list");
+		quizMapper.deleteQuiz(id);
+		return new ModelAndView("redirect:/quiz/list");
 	}
 	
 	/**
@@ -100,14 +100,14 @@ public class QuestionController {
 	 * @return
 	 */
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public ModelAndView showQuestion(
+	public ModelAndView show(
 			@PathVariable("id") int id
 			){
 		//
-		Question question = this.questionMapper.selectQuestion(id);
+		Quiz quiz = this.quizMapper.selectQuiz(id);
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("/question/questionView");
-		mav.addObject("question", question);
+		mav.setViewName("/quiz/quizView");
+		mav.addObject("quiz", quiz);
 		return mav;
 	}
 }

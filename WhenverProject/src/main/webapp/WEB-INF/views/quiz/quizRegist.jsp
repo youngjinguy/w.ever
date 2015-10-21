@@ -9,11 +9,11 @@
 </head>
 <body>
 	<div class="container">
-		<form class="form-horizontal" action="${ctx}/question/" method="post">			
+		<form class="form-horizontal" action="${ctx}/quiz/" method="post">			
 		  	<div class="form-group">
 			    <label for="section" class="col-sm-2 control-label">과목</label>
 			    <div class="col-sm-10">
-			      <select name="section" class="form-control" id="questionSection">>
+			      <select name="section" class="form-control" id="quizSection">>
 					  <option value=""> 선택 </option>
 					  <option value="LANGUAGE"> 국어 </option>
 					  <option value="MATH"> 수학 </option>

@@ -35,12 +35,6 @@
 				</div>
 			</div>
 			<div class="form-group">
-		    	<label for="cellPhoneNo2" class="col-md-2 control-label">상대방전화번호</label>
-		    	<div class="col-md-10">
-		    		<input type="text" class="form-control" placeholder="상대방전화번호" id="cellPhoneNo2" name="cellPhoneNo2" />
-				</div>
-			</div>
-			<div class="form-group">
 		    	<label for="birthDate" class="col-md-2 control-label">생년월일</label>
 		    	<div class="col-md-10">
 		    		<input type="text" class="form-control" placeholder="YYYYMMDD" id="birthDate" name="birthDate" />

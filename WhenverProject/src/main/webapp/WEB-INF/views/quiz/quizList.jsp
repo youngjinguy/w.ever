@@ -6,11 +6,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>문제 목록</title>
-<meta name="submenu" content="question" />
+<meta name="submenu" content="quiz" />
 <script type="text/javascript">
 	function ajax(){
 		$.ajax({
-			url : '${ctx}/ws/question',
+			url : '${ctx}/ws/quiz',
 			type : 'get',
 			dataType : 'json',
 			success : function(data){
@@ -35,23 +35,23 @@
 			<td>보기5</td>
 			<td>문제키워드</td>
 		</tr>	
-		<c:forEach var="question" items="${questions}">
+		<c:forEach var="quiz" items="${quizs}">
 			<tr>
-				<td><a href="${ctx}/question/${question.id}">${question.id}</a></td>
-				<td>${question.section}</td>
-				<td>${question.content}</td>
-				<td>${question.answer}</td>
-				<td>${question.selection1}</td>
-				<td>${question.selection2}</td>
-				<td>${question.selection3}</td>
-				<td>${question.selection4}</td>
-				<td>${question.selection5}</td>
-				<td>${question.keyword}</td>
+				<td><a href="${ctx}/quiz/${quiz.id}">${quiz.id}</a></td>
+				<td>${quiz.section}</td>
+				<td>${quiz.content}</td>
+				<td>${quiz.answer}</td>
+				<td>${quiz.selection1}</td>
+				<td>${quiz.selection2}</td>
+				<td>${quiz.selection3}</td>
+				<td>${quiz.selection4}</td>
+				<td>${quiz.selection5}</td>
+				<td>${quiz.keyword}</td>
 			</tr>
 		</c:forEach>
 	</table>
 	
-	<a class="btn btn-default" role="button" href="${ctx}/question/regist">등록</a>
+	<a class="btn btn-default" role="button" href="${ctx}/quiz/regist">등록</a>
 	<a class="btn btn-default" role="button" href="javascript:ajax();">ajax json call</a>
 	</div>
 </body>

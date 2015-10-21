@@ -23,7 +23,7 @@
 			</div>
 		</div>
 		<div class="form-group">
-	    	<label for="section" class="col-md-2 control-label">QUESTION_ID</label>
+	    	<label for="section" class="col-md-2 control-label">QUIZ_ID</label>
 	    	<div class="col-md-10">
 	    		<label>${wrong.qid}</label>
 			</div>
